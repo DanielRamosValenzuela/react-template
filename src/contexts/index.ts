@@ -1,0 +1,1 @@
+export { ConfigContextProvider, useConfig } from './ConfigContext';
