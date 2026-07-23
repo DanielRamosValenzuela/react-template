@@ -2,8 +2,15 @@
 
 import { usePersonalInfoForm } from './usePersonalInfoForm';
 import { FORM_NAMES } from '@/config/forms';
-import { useLeadCaptureStore, useQuotationStore } from '@/store';
-import { SectionHeader, StepActions, StepLayout, Summary, useSummarySections } from '@/widgets';
+import { useLeadCaptureStore } from '@/store';
+import {
+  FormSection,
+  PlanSummary,
+  ReadOnlyCard,
+  SectionHeader,
+  StepActions,
+  StepLayout,
+} from '@/widgets';
 import { CheckBoxController, InputController } from '@/widgets/form-controls';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
@@ -13,48 +20,23 @@ const ClPersonalInfoForm = () => {
   const { control, errors, handleSubmit, isSubmitting } = usePersonalInfoForm();
   const { getValues: getLeadCaptureValues } = useLeadCaptureStore();
   const { birthdate, identificationDocument } = getLeadCaptureValues();
-  const { getValues: getQuotationValues } = useQuotationStore();
-  const { selectedPlan } = getQuotationValues();
-  const summaryAccoItems = useSummarySections(FORM_NAMES.PERSONAL_INFO);
 
   return (
     <StepLayout
       header={<SectionHeader icon="medicine" title="Completa tus datos personales" />}
-      summary={
-        selectedPlan && (
-          <Summary
-            accoItems={summaryAccoItems}
-            badge={!!selectedPlan.promoTagText}
-            badgeText={selectedPlan.promoTagText}
-            legal={selectedPlan.discount}
-            price={`${selectedPlan.currency}${selectedPlan.price}`}
-            priceDetail={selectedPlan.localMonthlyPrice}
-            title={selectedPlan.title}
-          />
-        )
-      }
+      summary={<PlanSummary step={FORM_NAMES.PERSONAL_INFO} />}
     >
       <form
         className="starter-card-layout br-8 d-flex flex-column bg-white shadow-soft gap-40"
         onSubmit={handleSubmit}
       >
-        <div className="d-flex flex-column gap-16">
-          <div className="border-bottom-green pb16">
-            <p className="px-20 text-semibold letter-spacing-negative-18 line-height-1-5">
-              Datos del asegurado
-            </p>
-          </div>
-
-          <div className="d-flex flex-column gap-8 border br-8 pt24 pb24 pl16 pr16">
-            <div className="d-flex justify-content-between gap-16">
-              <span className="text-neutral60">RUT del asegurado</span>
-              <span className="text-neutral80">{identificationDocument}</span>
-            </div>
-            <div className="d-flex justify-content-between gap-16">
-              <span className="text-neutral60">Fecha de nacimiento</span>
-              <span className="text-neutral80">{birthdate}</span>
-            </div>
-          </div>
+        <FormSection title="Datos del asegurado">
+          <ReadOnlyCard
+            fields={[
+              { label: 'RUT del asegurado', value: identificationDocument },
+              { label: 'Fecha de nacimiento', value: birthdate },
+            ]}
+          />
 
           <div className="d-flex flex-column">
             <InputController
@@ -77,15 +59,9 @@ const ClPersonalInfoForm = () => {
               name="lastName"
             />
           </div>
-        </div>
+        </FormSection>
 
-        <div className="d-flex flex-column gap-16">
-          <div className="border-bottom-green pb16">
-            <p className="px-20 text-semibold letter-spacing-negative-18 line-height-1-5">
-              Dirección
-            </p>
-          </div>
-
+        <FormSection title="Dirección">
           <div className="d-flex flex-column">
             <InputController
               control={control}
@@ -107,7 +83,7 @@ const ClPersonalInfoForm = () => {
               name="addressNumber"
             />
           </div>
-        </div>
+        </FormSection>
 
         <CheckBoxController
           control={control}

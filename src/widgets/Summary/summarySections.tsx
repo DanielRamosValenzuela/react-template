@@ -2,6 +2,7 @@
 
 import { FORM_NAMES, type TFormName } from '@/config/forms';
 import { usePersonalInfoStore, useQuotationStore } from '@/store';
+import DetailRow from '../DetailRow';
 import type { ReactNode } from 'react';
 
 export interface SummarySectionItem {
@@ -25,18 +26,8 @@ export const useSummarySections = (step: TFormName): SummarySectionItem[] => {
       ? {
           content: (
             <div className="d-flex flex-column gap-8">
-              <div className="d-flex justify-content-between gap-16">
-                <span className="text-neutral60">Nombre</span>
-                <span className="text-neutral80">
-                  {firstName} {lastName}
-                </span>
-              </div>
-              <div className="d-flex justify-content-between gap-16">
-                <span className="text-neutral60">Direccion</span>
-                <span className="text-neutral80">
-                  {addressStreet} {addressNumber}
-                </span>
-              </div>
+              <DetailRow label="Nombre" value={`${firstName} ${lastName}`} />
+              <DetailRow label="Direccion" value={`${addressStreet} ${addressNumber}`} />
             </div>
           ),
           title: 'Datos del asegurado',
@@ -46,10 +37,7 @@ export const useSummarySections = (step: TFormName): SummarySectionItem[] => {
       content: (
         <div className="d-flex flex-column gap-8">
           {selectedPlan.cardInfo.map((item) => (
-            <div className="d-flex justify-content-between gap-16" key={item.title}>
-              <span className="text-neutral60">{item.title}</span>
-              <span className="text-neutral80">{item.detail}</span>
-            </div>
+            <DetailRow key={item.title} label={item.title} value={item.detail} />
           ))}
         </div>
       ),

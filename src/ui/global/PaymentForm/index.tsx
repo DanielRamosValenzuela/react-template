@@ -1,8 +1,7 @@
 'use client';
 
 import { FORM_NAMES } from '@/config/forms';
-import { useQuotationStore } from '@/store';
-import { SectionHeader, StepActions, StepLayout, Summary, useSummarySections } from '@/widgets';
+import { PlanSummary, SectionHeader, StepActions, StepLayout } from '@/widgets';
 import { useRouter } from 'next/navigation';
 import { Alert, PaymentMethod } from 'tomaco-components';
 import { usePaymentForm } from './usePaymentForm';
@@ -10,26 +9,11 @@ import { usePaymentForm } from './usePaymentForm';
 const PaymentForm = () => {
   const { push } = useRouter();
   const { confirmPayment, isConfirmed, methods, selectedMethodId, selectMethod } = usePaymentForm();
-  const { getValues: getQuotationValues } = useQuotationStore();
-  const { selectedPlan } = getQuotationValues();
-  const summaryAccoItems = useSummarySections(FORM_NAMES.PAYMENT);
 
   return (
     <StepLayout
       header={<SectionHeader icon="medicine" title="Selecciona tu método de pago" />}
-      summary={
-        selectedPlan && (
-          <Summary
-            accoItems={summaryAccoItems}
-            badge={!!selectedPlan.promoTagText}
-            badgeText={selectedPlan.promoTagText}
-            legal={selectedPlan.discount}
-            price={`${selectedPlan.currency}${selectedPlan.price}`}
-            priceDetail={selectedPlan.localMonthlyPrice}
-            title={selectedPlan.title}
-          />
-        )
-      }
+      summary={<PlanSummary step={FORM_NAMES.PAYMENT} />}
     >
       <div className="d-flex flex-column gap-16 mb24 max-width-736">
         {methods.map((method) => (
