@@ -2,9 +2,9 @@
 
 import { FORM_NAMES } from '@/config/forms';
 import { useQuotationStore } from '@/store';
-import { BackButton, SectionHeader, StepLayout, Summary, useSummarySections } from '@/widgets';
+import { SectionHeader, StepActions, StepLayout, Summary, useSummarySections } from '@/widgets';
 import { useRouter } from 'next/navigation';
-import { Alert, Button, PaymentMethod } from 'tomaco-components';
+import { Alert, PaymentMethod } from 'tomaco-components';
 import { usePaymentForm } from './usePaymentForm';
 
 const PaymentForm = () => {
@@ -52,18 +52,13 @@ const PaymentForm = () => {
         </Alert>
       )}
 
-      <div className="d-flex flex-column gap-16 max-width-736">
-        <Button
-          disabled={!selectedMethodId}
-          onClick={confirmPayment}
-          text="Pagar"
-          type="button"
-          variant="primary"
-        />
-      </div>
-
       <div className="mt40 max-width-736">
-        <BackButton onBack={() => push('/cotizacion')} />
+        <StepActions
+          continueText="Pagar"
+          disabled={!selectedMethodId}
+          onBack={() => push('/informacion-personal')}
+          onContinue={confirmPayment}
+        />
       </div>
     </StepLayout>
   );

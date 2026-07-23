@@ -1,7 +1,7 @@
 import CountryFormResolver from '@/config/CountryFormResolver';
 import { commonConfig } from '@/config/environment';
 import { FORM_NAMES } from '@/config/forms';
-import { Header, PageCard } from '@/widgets';
+import { Header, HowInsuranceWorks, PageCard } from '@/widgets';
 import Image from 'next/image';
 
 export default function Home() {
@@ -30,14 +30,7 @@ export default function Home() {
         </header>
 
         <section>
-          <div className="gap-16 br-top-8 pt16 pb16 pl24 pr24 bg-blueberry5 border d-flex flex-column w-100 d-md-flex flex-md-row align-items-md-center justify-content-md-between">
-            <p className="px-18 text-semibold letter-spacing-negative-18 line-height-1-5">
-              Conoce cómo funcionan estos seguros
-            </p>
-            <p className="px-16 cursor-pointer text-avocado60 text-medium text-decoration-underline letter-spacing-negative-16 line-height-1-5 text-regular">
-              Más información
-            </p>
-          </div>
+          <HowInsuranceWorks />
 
           <section className="starter-card-layout br-bottom-8 d-flex flex-column bg-white shadow-sm">
             <CountryFormResolver

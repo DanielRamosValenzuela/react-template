@@ -3,6 +3,7 @@
 import { quotationPlans } from '@/mocks/cl/quotation.mock';
 import type { QuotationPlanMock } from '@/mocks/quotation.types';
 import { useQuotationStore } from '@/store';
+import { setFlowStep } from '@/utils/client/flowStep';
 import { BackButton, QuotationNoResults, QuotationPlanGrid, SectionHeader } from '@/widgets';
 import { useRouter } from 'next/navigation';
 import { ProductCardFull } from 'tomaco-components';
@@ -13,7 +14,8 @@ const ClQuotation = () => {
 
   const hirePlan = (plan: QuotationPlanMock) => {
     setValues({ selectedPlan: plan });
-    push('/pago');
+    setFlowStep('/cotizacion');
+    push('/informacion-personal');
   };
 
   return (

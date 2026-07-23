@@ -6,12 +6,12 @@ const TRACE_ID_HEADER = 'x-trace-id';
 const FLOW_STEP_COOKIE = 'falabella-starter-flow-step';
 
 const FLOW_STEPS: Record<string, string[]> = {
-  cl: ['/', '/cotizacion', '/pago'],
-  co: ['/', '/cotizacion', '/pago'],
-  pe: ['/', '/cotizacion', '/pago'],
+  cl: ['/', '/cotizacion', '/informacion-personal', '/pago'],
+  co: ['/', '/cotizacion', '/informacion-personal', '/pago'],
+  pe: ['/', '/cotizacion', '/informacion-personal', '/pago'],
 };
 
-const PROTECTED_ROUTES = ['/cotizacion', '/pago'];
+const PROTECTED_ROUTES = ['/cotizacion', '/informacion-personal', '/pago'];
 
 function getStepIndex(route: string, country: string): number {
   return (FLOW_STEPS[country] ?? FLOW_STEPS.cl).indexOf(route);

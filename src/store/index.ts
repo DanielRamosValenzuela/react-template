@@ -4,5 +4,7 @@ export { useLeadCaptureStore } from './LeadCaptureStore';
 export type { LeadCaptureStoreValues } from './LeadCaptureStore';
 export { usePaymentStore } from './PaymentStore';
 export type { PaymentStoreValues } from './PaymentStore';
+export { usePersonalInfoStore } from './PersonalInfoStore';
+export type { PersonalInfoStoreValues } from './PersonalInfoStore';
 export { useQuotationStore } from './QuotationStore';
 export type { QuotationStoreValues } from './QuotationStore';

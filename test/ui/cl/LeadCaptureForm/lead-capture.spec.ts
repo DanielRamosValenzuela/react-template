@@ -8,6 +8,15 @@ test('renders the CL lead capture starter form', async ({ page }) => {
   await expect(page.getByRole('button', { name: 'Continuar' })).toBeVisible();
 });
 
+test('opens the more info modal', async ({ page }) => {
+  await page.goto('/');
+
+  await page.getByText('Más información').click();
+
+  await expect(page.getByText('Conoce tu seguro')).toBeVisible();
+  await expect(page.getByRole('tab', { name: 'Coberturas' })).toBeVisible();
+});
+
 test('advances to quotation after valid submit', async ({ page }) => {
   await page.goto('/');
 

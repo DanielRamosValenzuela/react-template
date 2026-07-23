@@ -15,6 +15,7 @@ import { Loader } from 'tomaco-components';
 type CountryFormPropsByName = {
   [FORM_NAMES.LEAD_CAPTURE]: Record<string, never>;
   [FORM_NAMES.PAYMENT]: Record<string, never>;
+  [FORM_NAMES.PERSONAL_INFO]: Record<string, never>;
   [FORM_NAMES.QUOTATION]: Record<string, never>;
 };
 
@@ -36,16 +37,19 @@ const FORM_COMPONENTS_BY_COUNTRY: Partial<Record<TCountry, Partial<CountryFormCo
   cl: {
     [FORM_NAMES.LEAD_CAPTURE]: lazy(() => import('@/ui/cl/LeadCaptureForm')),
     [FORM_NAMES.PAYMENT]: PaymentFormLazy,
+    [FORM_NAMES.PERSONAL_INFO]: lazy(() => import('@/ui/cl/PersonalInfoForm')),
     [FORM_NAMES.QUOTATION]: lazy(() => import('@/ui/cl/Quotation')),
   },
   co: {
     [FORM_NAMES.LEAD_CAPTURE]: lazy(() => import('@/ui/co/LeadCaptureForm')),
     [FORM_NAMES.PAYMENT]: PaymentFormLazy,
+    [FORM_NAMES.PERSONAL_INFO]: lazy(() => import('@/ui/co/PersonalInfoForm')),
     [FORM_NAMES.QUOTATION]: lazy(() => import('@/ui/co/Quotation')),
   },
   pe: {
     [FORM_NAMES.LEAD_CAPTURE]: lazy(() => import('@/ui/pe/LeadCaptureForm')),
     [FORM_NAMES.PAYMENT]: PaymentFormLazy,
+    [FORM_NAMES.PERSONAL_INFO]: lazy(() => import('@/ui/pe/PersonalInfoForm')),
     [FORM_NAMES.QUOTATION]: lazy(() => import('@/ui/pe/Quotation')),
   },
 };
