@@ -13,14 +13,17 @@ export const FLOW_STEPS_BY_COUNTRY: Record<TCountry, FlowStep[]> = {
   cl: [
     { formName: FORM_NAMES.LEAD_CAPTURE, label: 'Captura de lead', path: '/' },
     { formName: FORM_NAMES.QUOTATION, label: 'Cotizacion', path: '/cotizacion' },
+    { formName: FORM_NAMES.PAYMENT, label: 'Pago', path: '/pago' },
   ],
   co: [
     { formName: FORM_NAMES.LEAD_CAPTURE, label: 'Captura de lead', path: '/' },
     { formName: FORM_NAMES.QUOTATION, label: 'Cotizacion', path: '/cotizacion' },
+    { formName: FORM_NAMES.PAYMENT, label: 'Pago', path: '/pago' },
   ],
   pe: [
     { formName: FORM_NAMES.LEAD_CAPTURE, label: 'Captura de lead', path: '/' },
     { formName: FORM_NAMES.QUOTATION, label: 'Cotizacion', path: '/cotizacion' },
+    { formName: FORM_NAMES.PAYMENT, label: 'Pago', path: '/pago' },
   ],
 };
 

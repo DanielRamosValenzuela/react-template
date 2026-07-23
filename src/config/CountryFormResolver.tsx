@@ -14,6 +14,7 @@ import { Loader } from 'tomaco-components';
 
 type CountryFormPropsByName = {
   [FORM_NAMES.LEAD_CAPTURE]: Record<string, never>;
+  [FORM_NAMES.PAYMENT]: Record<string, never>;
   [FORM_NAMES.QUOTATION]: Record<string, never>;
 };
 
@@ -29,17 +30,22 @@ interface CountryFormResolverProps<TSelectedFormName extends TFormName = TFormNa
 
 const EMPTY_COMPONENT_PROPS = {} as const;
 
+const PaymentFormLazy = lazy(() => import('@/ui/global/PaymentForm'));
+
 const FORM_COMPONENTS_BY_COUNTRY: Partial<Record<TCountry, Partial<CountryFormComponentMap>>> = {
   cl: {
     [FORM_NAMES.LEAD_CAPTURE]: lazy(() => import('@/ui/cl/LeadCaptureForm')),
+    [FORM_NAMES.PAYMENT]: PaymentFormLazy,
     [FORM_NAMES.QUOTATION]: lazy(() => import('@/ui/cl/Quotation')),
   },
   co: {
     [FORM_NAMES.LEAD_CAPTURE]: lazy(() => import('@/ui/co/LeadCaptureForm')),
+    [FORM_NAMES.PAYMENT]: PaymentFormLazy,
     [FORM_NAMES.QUOTATION]: lazy(() => import('@/ui/co/Quotation')),
   },
   pe: {
     [FORM_NAMES.LEAD_CAPTURE]: lazy(() => import('@/ui/pe/LeadCaptureForm')),
+    [FORM_NAMES.PAYMENT]: PaymentFormLazy,
     [FORM_NAMES.QUOTATION]: lazy(() => import('@/ui/pe/Quotation')),
   },
 };

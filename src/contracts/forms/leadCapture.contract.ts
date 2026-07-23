@@ -11,7 +11,6 @@ export interface LeadCapturePayload {
   };
   email: string;
   phone: string;
-  productCode: string;
 }
 
 interface LeadCaptureResponse {
@@ -24,7 +23,7 @@ export const leadCaptureContract: FormContract<
   LeadCapturePayload,
   LeadCaptureResponse
 > = {
-  buildPayload: (values, context) => ({
+  buildPayload: (values) => ({
     birthdate: values.birthdate,
     document: {
       number: normalizeDocument(values.identificationDocument),
@@ -32,7 +31,6 @@ export const leadCaptureContract: FormContract<
     },
     email: values.email.trim().toLowerCase(),
     phone: onlyDigits(values.phone),
-    productCode: context.productCode,
   }),
   countries: ['cl', 'co', 'pe'],
   formName: FORM_NAMES.LEAD_CAPTURE,

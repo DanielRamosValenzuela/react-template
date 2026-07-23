@@ -6,8 +6,10 @@ import { Input } from 'tomaco-components';
 
 type InputProps = ComponentProps<typeof Input>;
 
-interface InputControllerProps<TFieldValues extends FieldValues>
-  extends Omit<InputProps, 'name' | 'onChange' | 'value'> {
+interface InputControllerProps<TFieldValues extends FieldValues> extends Omit<
+  InputProps,
+  'name' | 'onChange' | 'value'
+> {
   control: Control<TFieldValues>;
   name: Path<TFieldValues>;
   transform?: (value: string) => string;

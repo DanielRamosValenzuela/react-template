@@ -14,6 +14,4 @@ const resolveEnvironment = (): TEnvironment => {
 export const commonConfig: PublicConfig = {
   country: resolveCountry(),
   environment: resolveEnvironment(),
-  productCode: process.env.NEXT_PUBLIC_PRODUCT_CODE ?? 'insurance-starter',
-  productName: process.env.NEXT_PUBLIC_PRODUCT_NAME ?? 'Producto de seguros',
 };

@@ -7,8 +7,6 @@ export type TEnvironment = 'local' | 'qa' | 'prod';
 export interface PublicConfig {
   country: TCountry;
   environment: TEnvironment;
-  productCode: string;
-  productName: string;
 }
 
 export const isCountry = (value: string | undefined): value is TCountry =>

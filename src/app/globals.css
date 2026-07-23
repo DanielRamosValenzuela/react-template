@@ -74,7 +74,7 @@ a {
   padding: 40px;
 }
 
-.quotation-page-layout {
+.wide-page-layout {
   width: 100%;
   padding-left: 64px;
   padding-right: 64px;
@@ -165,7 +165,7 @@ a {
     padding: 40px 24px;
   }
 
-  .quotation-page-layout {
+  .wide-page-layout {
     padding-left: 24px;
     padding-right: 24px;
   }

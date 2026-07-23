@@ -4,7 +4,7 @@ import { useConfig } from '@/contexts';
 import { Header as TomacoHeader } from 'tomaco-components';
 
 export const Header = () => {
-  const { country, productName } = useConfig();
+  const { country } = useConfig();
 
   return (
     <TomacoHeader
@@ -13,7 +13,7 @@ export const Header = () => {
       logoAlt="Falabella Seguros"
       logoLink="/"
       noMargin={false}
-      stepName={`${productName} ${country.toUpperCase()}`}
+      stepName={`Producto de seguros ${country.toUpperCase()}`}
       total={2}
     />
   );

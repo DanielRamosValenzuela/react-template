@@ -1,5 +1,6 @@
 export const FORM_NAMES = {
   LEAD_CAPTURE: 'leadCapture',
+  PAYMENT: 'payment',
   QUOTATION: 'quotation',
 } as const;
 

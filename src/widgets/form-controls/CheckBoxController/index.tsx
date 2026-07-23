@@ -6,8 +6,10 @@ import { CheckBox } from 'tomaco-components';
 
 type CheckBoxProps = ComponentProps<typeof CheckBox>;
 
-interface CheckBoxControllerProps<TFieldValues extends FieldValues>
-  extends Omit<CheckBoxProps, 'checked' | 'name' | 'onChange'> {
+interface CheckBoxControllerProps<TFieldValues extends FieldValues> extends Omit<
+  CheckBoxProps,
+  'checked' | 'name' | 'onChange'
+> {
   control: Control<TFieldValues>;
   name: Path<TFieldValues>;
 }

@@ -2,7 +2,6 @@ import type { TCountry } from '@/config/types';
 
 export interface ContractBuildContext {
   country: TCountry;
-  productCode: string;
 }
 
 export interface FormContract<TStoreValues, TPayload, TResponse> {
