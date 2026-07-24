@@ -5,6 +5,7 @@ export { default as DetailRow } from './DetailRow';
 export { default as ErrorDisplay } from './ErrorDisplay';
 export { default as FormSection } from './FormSection';
 export { default as HowInsuranceWorks } from './HowInsuranceWorks';
+export { FrequentlyAskedQuestions } from './HowInsuranceWorks/FrequentlyAskedQuestionsModal';
 export { default as LoaderComponent } from './LoaderComponent';
 export { default as PageCard } from './PageCard';
 export { default as ReadOnlyCard } from './ReadOnlyCard';

@@ -13,8 +13,22 @@ test('opens the more info modal', async ({ page }) => {
 
   await page.getByText('Más información').click();
 
-  await expect(page.getByText('Conoce tu seguro')).toBeVisible();
-  await expect(page.getByRole('tab', { name: 'Coberturas' })).toBeVisible();
+  await expect(page.getByText('Seguro de Hogar')).toBeVisible();
+  await expect(
+    page.getByRole('tab', { name: 'Coberturas y asistencias' }),
+  ).toBeVisible();
+  await expect(page.getByRole('tab', { name: 'Glosario' })).toBeVisible();
+  await expect(page.getByText('Protege lo que hay en tu hogar')).toBeVisible();
+});
+
+test('opens the FAQ section', async ({ page }) => {
+  await page.goto('/');
+
+  await page.getByText('revisa las preguntas frecuentes').click();
+
+  await expect(
+    page.getByRole('heading', { name: 'Preguntas frecuentes' }),
+  ).toBeVisible();
 });
 
 test('advances to quotation after valid submit', async ({ page }) => {

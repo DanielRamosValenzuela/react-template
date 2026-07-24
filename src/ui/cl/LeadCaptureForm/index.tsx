@@ -2,11 +2,25 @@
 
 import { useLeadCaptureForm } from './useLeadCaptureForm';
 import { CheckBoxController, InputController } from '@/widgets/form-controls';
+import { PRIVACY_POLICY_URL_BY_COUNTRY } from '@/config/constants/legalLinks';
 import Link from 'next/link';
-import { Alert, Button } from 'tomaco-components';
+import { useState } from 'react';
+import { Alert, Button, Switch } from 'tomaco-components';
+
+const AGE_ERROR_MESSAGES = {
+  OVERAGE:
+    'Lamentamos informarte que superas el limite de edad para contratar este seguro. Para más información llámanos al +56 22 390 6542',
+  UNDERAGE: 'Para contratar este seguro debes ser mayor de 18 años de edad.',
+} as const;
 
 const ClLeadCaptureForm = () => {
-  const { control, errors, formatPhone, handleSubmit, isSubmitting } = useLeadCaptureForm();
+  const [isAdvisorAssisted, setIsAdvisorAssisted] = useState(false);
+  const { ageValidationError, control, errors, formatPhone, handleSubmit, isSubmitting } =
+    useLeadCaptureForm();
+
+  const hasFieldErrors = !!Object.keys(errors).length;
+  const showGlobalValidationError = hasFieldErrors && !ageValidationError;
+  const showAgeValidationError = !hasFieldErrors && !!ageValidationError;
 
   return (
     <form className="d-flex flex-column w-100 gap-24" onSubmit={handleSubmit}>
@@ -71,7 +85,12 @@ const ClLeadCaptureForm = () => {
         >
           <span className="px-16 text-neutral60 line-height-1-5 letter-spacing-negative-16">
             Acepto que me contacten para terminar el proceso de contratacion del seguro segun la{' '}
-            <Link className="text-avocado60 text-medium text-decoration-underline" href="#">
+            <Link
+              className="text-avocado60 text-medium text-decoration-underline"
+              href={PRIVACY_POLICY_URL_BY_COUNTRY.cl}
+              rel="noopener noreferrer"
+              target="_blank"
+            >
               politica de privacidad
             </Link>
             .
@@ -79,11 +98,18 @@ const ClLeadCaptureForm = () => {
         </CheckBoxController>
       </div>
 
-      {!!Object.keys(errors).length && (
+      <div className="d-flex align-items-center justify-content-between border br-8 pt16 pb16 pl16 pr16">
+        <span className="px-16 text-neutral70 line-height-1-5">Estoy recibiendo ayuda de un asesor</span>
+        <Switch
+          checked={isAdvisorAssisted}
+          id="advisor-assistance-cl"
+          onChange={(event) => setIsAdvisorAssisted(event.target.checked)}
+        />
+      </div>
+
+      {showAgeValidationError && ageValidationError && (
         <div className="d-flex flex-column gap-16">
-          {!!errors.acceptedPrivacy?.message && (
-            <Alert type="warning">{errors.acceptedPrivacy.message}</Alert>
-          )}
+          <Alert type="warning">{AGE_ERROR_MESSAGES[ageValidationError]}</Alert>
         </div>
       )}
 
@@ -94,6 +120,12 @@ const ClLeadCaptureForm = () => {
         text="Continuar"
         type="button"
       />
+
+      {showGlobalValidationError && (
+        <div className="d-flex flex-column gap-16">
+          <Alert type="warning">Completa la información solicitada para avanzar</Alert>
+        </div>
+      )}
     </form>
   );
 };
