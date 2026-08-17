@@ -10,37 +10,10 @@ export interface FlowStep {
 }
 
 export const FLOW_STEPS_BY_COUNTRY: Record<TCountry, FlowStep[]> = {
-  cl: [
-    { formName: FORM_NAMES.LEAD_CAPTURE, label: 'Captura de lead', path: '/' },
-    { formName: FORM_NAMES.QUOTATION, label: 'Cotizacion', path: '/cotizacion' },
-    {
-      formName: FORM_NAMES.PERSONAL_INFO,
-      label: 'Informacion personal',
-      path: '/informacion-personal',
-    },
-    { formName: FORM_NAMES.PAYMENT, label: 'Pago', path: '/pago' },
-  ],
-  co: [
-    { formName: FORM_NAMES.LEAD_CAPTURE, label: 'Captura de lead', path: '/' },
-    { formName: FORM_NAMES.QUOTATION, label: 'Cotizacion', path: '/cotizacion' },
-    {
-      formName: FORM_NAMES.PERSONAL_INFO,
-      label: 'Informacion personal',
-      path: '/informacion-personal',
-    },
-    { formName: FORM_NAMES.PAYMENT, label: 'Pago', path: '/pago' },
-  ],
-  pe: [
-    { formName: FORM_NAMES.LEAD_CAPTURE, label: 'Captura de lead', path: '/' },
-    { formName: FORM_NAMES.QUOTATION, label: 'Cotizacion', path: '/cotizacion' },
-    {
-      formName: FORM_NAMES.PERSONAL_INFO,
-      label: 'Informacion personal',
-      path: '/informacion-personal',
-    },
-    { formName: FORM_NAMES.PAYMENT, label: 'Pago', path: '/pago' },
-  ],
+  cl: [{ formName: FORM_NAMES.HELLO, label: 'Inicio', path: '/' }],
+  co: [{ formName: FORM_NAMES.HELLO, label: 'Inicio', path: '/' }],
+  pe: [{ formName: FORM_NAMES.HELLO, label: 'Inicio', path: '/' }],
 };
 
 export const getInitialFormByCountry = (country: TCountry): TFormName =>
-  FLOW_STEPS_BY_COUNTRY[country][0]?.formName ?? FORM_NAMES.LEAD_CAPTURE;
+  FLOW_STEPS_BY_COUNTRY[country][0]?.formName ?? FORM_NAMES.HELLO;

@@ -58,14 +58,6 @@ a {
   max-width: 560px;
 }
 
-.max-width-736 {
-  max-width: 736px !important;
-}
-
-.max-width-1152 {
-  max-width: 1152px;
-}
-
 .max-width-362 {
   max-width: 362px !important;
 }
@@ -78,51 +70,6 @@ a {
   border-bottom: 1px solid var(--color-accent);
 }
 
-.wide-page-layout {
-  width: 100%;
-  padding-left: 64px;
-  padding-right: 64px;
-}
-
-.quotation-grid {
-  width: 100%;
-}
-
-.quotation-card {
-  height: 100%;
-}
-
-.quotation-card .product-card,
-.quotation-card .product-card-full,
-.quotation-card article {
-  height: 100%;
-  min-height: 480px;
-}
-
-.only-card-page-header {
-  margin-bottom: 48px;
-}
-
-.card-fade-in {
-  animation: fadeInUp 0.4s ease-out both;
-  animation-delay: calc(var(--animation-order, 0) * 0.12s);
-}
-
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(16px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.letter-spacing-negative-16 {
-  letter-spacing: -0.16px;
-}
-
 .letter-spacing-negative-18 {
   letter-spacing: -0.18px;
 }
@@ -133,14 +80,6 @@ a {
 
 .line-height-1-5 {
   line-height: 1.5;
-}
-
-.letter-spacing-negative-56 {
-  letter-spacing: -0.56px;
-}
-
-.letter-spacing-negative-64 {
-  letter-spacing: -0.64px;
 }
 
 @media (min-width: 992px) {
@@ -161,23 +100,8 @@ a {
     padding-right: 24px;
   }
 
-  .only-card-page-header {
-    margin-bottom: 40px;
-  }
-
   .starter-card-layout {
     padding: 40px 24px;
-  }
-
-  .wide-page-layout {
-    padding-left: 24px;
-    padding-right: 24px;
-  }
-
-  .quotation-card .product-card,
-  .quotation-card .product-card-full,
-  .quotation-card article {
-    min-height: 0;
   }
 }
 

@@ -5,18 +5,9 @@ import { browserSessionStorage } from '@/utils/client/sessionStorage';
 import { create } from 'zustand';
 import { createJSONStorage, devtools, persist } from 'zustand/middleware';
 
-interface InsuranceSelection {
-  planCode?: string;
-  productCode: string;
-  productName: string;
-}
-
 export interface CommonStoreValues {
   country: TCountry;
   currentForm: TFormName;
-  quoteId: string;
-  selectedPlan: InsuranceSelection | null;
-  selectedProduct: InsuranceSelection | null;
   traceId: string;
 }
 
@@ -30,10 +21,7 @@ interface CommonStore extends CommonStoreValues {
 
 const getDefaultValues = (): CommonStoreValues => ({
   country: commonConfig.country,
-  currentForm: FORM_NAMES.LEAD_CAPTURE,
-  quoteId: '',
-  selectedPlan: null,
-  selectedProduct: null,
+  currentForm: FORM_NAMES.HELLO,
   traceId: '',
 });
 

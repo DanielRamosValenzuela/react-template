@@ -13,10 +13,7 @@ import {
 import { Loader } from 'tomaco-components';
 
 type CountryFormPropsByName = {
-  [FORM_NAMES.LEAD_CAPTURE]: Record<string, never>;
-  [FORM_NAMES.PAYMENT]: Record<string, never>;
-  [FORM_NAMES.PERSONAL_INFO]: Record<string, never>;
-  [FORM_NAMES.QUOTATION]: Record<string, never>;
+  [FORM_NAMES.HELLO]: Record<string, never>;
 };
 
 type CountryFormComponentMap = {
@@ -31,26 +28,15 @@ interface CountryFormResolverProps<TSelectedFormName extends TFormName = TFormNa
 
 const EMPTY_COMPONENT_PROPS = {} as const;
 
-const PaymentFormLazy = lazy(() => import('@/ui/global/PaymentForm'));
-
 const FORM_COMPONENTS_BY_COUNTRY: Partial<Record<TCountry, Partial<CountryFormComponentMap>>> = {
   cl: {
-    [FORM_NAMES.LEAD_CAPTURE]: lazy(() => import('@/ui/cl/LeadCaptureForm')),
-    [FORM_NAMES.PAYMENT]: PaymentFormLazy,
-    [FORM_NAMES.PERSONAL_INFO]: lazy(() => import('@/ui/cl/PersonalInfoForm')),
-    [FORM_NAMES.QUOTATION]: lazy(() => import('@/ui/cl/Quotation')),
+    [FORM_NAMES.HELLO]: lazy(() => import('@/ui/cl/Hello')),
   },
   co: {
-    [FORM_NAMES.LEAD_CAPTURE]: lazy(() => import('@/ui/co/LeadCaptureForm')),
-    [FORM_NAMES.PAYMENT]: PaymentFormLazy,
-    [FORM_NAMES.PERSONAL_INFO]: lazy(() => import('@/ui/co/PersonalInfoForm')),
-    [FORM_NAMES.QUOTATION]: lazy(() => import('@/ui/co/Quotation')),
+    [FORM_NAMES.HELLO]: lazy(() => import('@/ui/co/Hello')),
   },
   pe: {
-    [FORM_NAMES.LEAD_CAPTURE]: lazy(() => import('@/ui/pe/LeadCaptureForm')),
-    [FORM_NAMES.PAYMENT]: PaymentFormLazy,
-    [FORM_NAMES.PERSONAL_INFO]: lazy(() => import('@/ui/pe/PersonalInfoForm')),
-    [FORM_NAMES.QUOTATION]: lazy(() => import('@/ui/pe/Quotation')),
+    [FORM_NAMES.HELLO]: lazy(() => import('@/ui/pe/Hello')),
   },
 };
 

@@ -1,43 +1,15 @@
 import CountryFormResolver from '@/config/CountryFormResolver';
 import { commonConfig } from '@/config/environment';
 import { FORM_NAMES } from '@/config/forms';
-import { Header, HowInsuranceWorks, PageCard } from '@/widgets';
-import Image from 'next/image';
+import { Header, PageCard } from '@/widgets';
 
 export default function Home() {
   return (
     <>
       <Header />
       <PageCard>
-        <header className="text-center d-flex flex-column align-items-center justify-content-center gap-16 align-self-stretch only-card-page-header">
-          <section className="text-center d-flex flex-column align-items-center justify-content-center gap-4 align-self-stretch">
-            <span className="text-semilight text-neutral60 text-center px-20 line-height-1-5 letter-spacing-negative-16">
-              Cotizador de Seguro
-            </span>
-            <div className="gap-12 d-flex align-items-center justify-content-center">
-              <Image
-                src="/icons/health-big.svg"
-                alt="Salud"
-                width={40}
-                height={40}
-                loading="eager"
-              />
-              <span className="text-regular text-neutral80 line-height-1-4 px-32 letter-spacing-negative-64">
-                Producto de seguros
-              </span>
-            </div>
-          </section>
-        </header>
-
-        <section>
-          <HowInsuranceWorks />
-
-          <section className="starter-card-layout br-bottom-8 d-flex flex-column bg-white shadow-sm">
-            <CountryFormResolver
-              country={commonConfig.country}
-              formName={FORM_NAMES.LEAD_CAPTURE}
-            />
-          </section>
+        <section className="starter-card-layout br-bottom-8 d-flex flex-column bg-white shadow-sm">
+          <CountryFormResolver country={commonConfig.country} formName={FORM_NAMES.HELLO} />
         </section>
       </PageCard>
     </>
