@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "projectName": "react-template",
-  "packageManager": "pnpm",
+  "packageManager": "npm",
   "lintGuardrail": "yes",
   "product": {
     "portfolio": "Falabella Seguros",
@@ -9,10 +9,10 @@
     "designSystemPackage": "tomaco-components"
   },
   "commands": {
-    "lint": "pnpm lint",
-    "typecheck": "pnpm exec tsc --noEmit",
-    "test": "pnpm test",
-    "e2e": "pnpm exec playwright test"
+    "lint": "npm run lint",
+    "typecheck": "npm exec tsc --noEmit",
+    "test": "npm run test:e2e",
+    "e2e": "npm run test:e2e"
   },
   "paths": {
     "uiRoot": "src/ui",
@@ -35,9 +35,9 @@
     "visualDiffThreshold": 0.01
   },
   "playwright": {
-    "cliCommand": "pnpm exec playwright-cli",
+    "cliCommand": "npm run test:e2e",
     "evidenceRoot": "features/<id>/evidence",
-    "testCommand": "pnpm exec playwright test"
+    "testCommand": "npm run test:e2e"
   },
   "graphify": {
     "target": "src"
@@ -98,5 +98,23 @@
     }
   },
   "homeroVersion": "0.16.0",
-  "homeroClient": "both"
+  "homeroClient": "both",
+  "discovery": {
+    "projectStatus": "existing frontend repo",
+    "monorepo": "no",
+    "countries": "cl, pe, co",
+    "figmaSource": "TBD",
+    "businessGoal": "TBD",
+    "successState": "TBD",
+    "stakeholders": "TBD"
+  },
+  "stack": {
+    "framework": "Next.js App Router",
+    "runtime": "Node.js",
+    "forms": "React Hook Form + Zod",
+    "designSystem": "Tomaco",
+    "stylingException": "none",
+    "data": "TanStack Query for reads and Server Actions for writes",
+    "state": "Zustand only for cross-step client state"
+  }
 }
