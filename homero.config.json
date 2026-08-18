@@ -1,0 +1,102 @@
+{
+  "schemaVersion": 1,
+  "projectName": "react-template",
+  "packageManager": "pnpm",
+  "lintGuardrail": "yes",
+  "product": {
+    "portfolio": "Falabella Seguros",
+    "designSystem": "Tomaco",
+    "designSystemPackage": "tomaco-components"
+  },
+  "commands": {
+    "lint": "pnpm lint",
+    "typecheck": "pnpm exec tsc --noEmit",
+    "test": "pnpm test",
+    "e2e": "pnpm exec playwright test"
+  },
+  "paths": {
+    "uiRoot": "src/ui",
+    "stepRoot": "src/app",
+    "serverActionsRoot": "src/actions",
+    "storesRoot": "src/store",
+    "widgetsRoot": "src/widgets",
+    "testRoot": "test"
+  },
+  "transport": {
+    "pattern": "server-actions",
+    "options": [
+      "server-actions",
+      "proxy-middleware"
+    ]
+  },
+  "figma": {
+    "mcpExampleFile": "mcp.example.json",
+    "requiredForVisualChanges": true,
+    "visualDiffThreshold": 0.01
+  },
+  "playwright": {
+    "cliCommand": "pnpm exec playwright-cli",
+    "evidenceRoot": "features/<id>/evidence",
+    "testCommand": "pnpm exec playwright test"
+  },
+  "graphify": {
+    "target": "src"
+  },
+  "contracts": {
+    "mode": "contract-draft",
+    "format": "examples",
+    "source": "TBD",
+    "mockStrategy": "fixtures",
+    "mockLocation": "src/mocks",
+    "states": "success, loading, empty, validation error, business error, network/server error",
+    "sensitiveDataPolicy": "anonymized-only"
+  },
+  "workspace": {
+    "featureBranchPrefix": "feature/",
+    "humanCommitRequired": true,
+    "allowHomeroCommit": false,
+    "allowHomeroPush": false,
+    "allowHomeroPullRequest": false,
+    "allowHomeroMerge": false
+  },
+  "runtime": {
+    "maxIterations": 10,
+    "maxAttemptsPerTask": 3,
+    "maxVerifyAttempts": 2
+  },
+  "agents": {
+    "workflow": "discover -> specify -> plan -> tasks -> implement -> verify -> converge",
+    "coordinator": "homero-coordinator",
+    "roles": [
+      "homero-discovery",
+      "homero-figma",
+      "homero-contracts",
+      "homero-planner",
+      "homero-implementer",
+      "homero-reviewer"
+    ],
+    "models": {
+      "_comment": "Per-agent model pins, by what the role actually does. An empty string emits no model key at all, which is the only value that honors the user's own model picker. claude: only Claude models resolve — inherit|opus|sonnet|haiku|fable or a claude-* id; a GPT name will NOT resolve there. copilot: MUST be the exact string shown in your own Copilot model picker UI — this varies by org/subscription/plan and changes over time, so Homero ships every copilot pin empty by default rather than guess a name that might not exist (an unresolvable model value silently falls back to whatever Copilot's own default is, which is confusing to debug — this happened once already, see CHANGELOG 0.16.0). Three tiers by what the role actually does, for when you DO want to fill these in with your own real model names: explore/cheapest for discovery and contracts — they read and report, they don't decide; execute/mid for planner and implementer — they produce the deliverable from what's already been gathered; think/strongest for figma and reviewer — the two agents whose mistakes nobody downstream can catch. Coordinator always stays unpinned (inherit / empty string) so it always follows the user's own model picker — it is the only agent a human ever talks to directly (docs/homero/agent-roles.md), so it must never be pinned to something cheaper than what the human chose.",
+      "claude": {
+        "homero-coordinator": "inherit",
+        "homero-discovery": "haiku",
+        "homero-figma": "opus",
+        "homero-contracts": "haiku",
+        "homero-planner": "sonnet",
+        "homero-implementer": "sonnet",
+        "homero-reviewer": "opus"
+      },
+      "copilot": {
+        "homero-coordinator": "",
+        "homero-discovery": "",
+        "homero-figma": "",
+        "homero-contracts": "",
+        "homero-planner": "",
+        "homero-implementer": "",
+        "homero-reviewer": ""
+      }
+    }
+  },
+  "homeroVersion": "0.16.0",
+  "homeroClient": "both"
+}
