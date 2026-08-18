@@ -1,0 +1,102 @@
+{
+  "schemaVersion": 1,
+  "projectName": "react-template",
+  "packageManager": "pnpm",
+  "lintGuardrail": "yes",
+  "product": {
+    "portfolio": "Falabella Seguros",
+    "designSystem": "Tomaco",
+    "designSystemPackage": "tomaco-components"
+  },
+  "commands": {
+    "lint": "pnpm lint",
+    "typecheck": "pnpm exec tsc --noEmit",
+    "test": "pnpm test",
+    "e2e": "pnpm exec playwright test"
+  },
+  "paths": {
+    "uiRoot": "src/ui",
+    "stepRoot": "src/app",
+    "serverActionsRoot": "src/actions",
+    "storesRoot": "src/store",
+    "widgetsRoot": "src/widgets",
+    "testRoot": "test"
+  },
+  "transport": {
+    "pattern": "server-actions",
+    "options": [
+      "server-actions",
+      "proxy-middleware"
+    ]
+  },
+  "figma": {
+    "mcpExampleFile": "mcp.example.json",
+    "requiredForVisualChanges": true,
+    "visualDiffThreshold": 0.01
+  },
+  "playwright": {
+    "cliCommand": "pnpm exec playwright-cli",
+    "evidenceRoot": "features/<id>/evidence",
+    "testCommand": "pnpm exec playwright test"
+  },
+  "graphify": {
+    "target": "src"
+  },
+  "contracts": {
+    "mode": "contract-draft",
+    "format": "examples",
+    "source": "TBD",
+    "mockStrategy": "fixtures",
+    "mockLocation": "src/mocks",
+    "states": "success, loading, empty, validation error, business error, network/server error",
+    "sensitiveDataPolicy": "anonymized-only"
+  },
+  "workspace": {
+    "featureBranchPrefix": "feature/",
+    "humanCommitRequired": true,
+    "allowHomeroCommit": false,
+    "allowHomeroPush": false,
+    "allowHomeroPullRequest": false,
+    "allowHomeroMerge": false
+  },
+  "runtime": {
+    "maxIterations": 10,
+    "maxAttemptsPerTask": 3,
+    "maxVerifyAttempts": 2
+  },
+  "agents": {
+    "workflow": "discover -> specify -> plan -> tasks -> implement -> verify -> converge",
+    "coordinator": "homero-coordinator",
+    "roles": [
+      "homero-discovery",
+      "homero-figma",
+      "homero-contracts",
+      "homero-planner",
+      "homero-implementer",
+      "homero-reviewer"
+    ],
+    "models": {
+      "_comment": "Per-agent model pins, by what the role actually does. An empty string emits no model key at all, which is the only value that honors the user's own model picker. claude: only Claude models resolve — inherit|opus|sonnet|haiku|fable or a claude-* id; a GPT name will NOT resolve there. copilot: the friendly name exactly as it appears in the Copilot model picker (any vendor). Three tiers: explorar/cheapest (haiku, GPT-5.6 Luna) for discovery and contracts — they read and report, they don't decide; ejecucion/mid (sonnet, GPT-5.6 Terra) for planner and implementer — they produce the deliverable from what's already been gathered; pensar/strongest (opus, GPT-5.6 Sol) for figma and reviewer — the two agents whose mistakes nobody downstream can catch. Coordinator stays unpinned (inherit / empty string) so it always follows the user's own model picker. NOTE: Sol needs Copilot Pro+/Max/Business/Enterprise, and on Business/Enterprise an admin must enable the GPT-5.6 model policy (off by default) — otherwise the pin degrades silently to the picker default. The cloud coding agent may ignore the key entirely.",
+      "claude": {
+        "homero-coordinator": "inherit",
+        "homero-discovery": "haiku",
+        "homero-figma": "opus",
+        "homero-contracts": "haiku",
+        "homero-planner": "sonnet",
+        "homero-implementer": "sonnet",
+        "homero-reviewer": "opus"
+      },
+      "copilot": {
+        "homero-coordinator": "",
+        "homero-discovery": "GPT-5.6 Luna",
+        "homero-figma": "GPT-5.6 Sol",
+        "homero-contracts": "GPT-5.6 Luna",
+        "homero-planner": "GPT-5.6 Terra",
+        "homero-implementer": "GPT-5.6 Terra",
+        "homero-reviewer": "GPT-5.6 Sol"
+      }
+    }
+  },
+  "homeroVersion": "0.15.0",
+  "homeroClient": "both"
+}
