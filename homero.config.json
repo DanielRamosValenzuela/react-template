@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "projectName": "react-template",
-  "packageManager": "pnpm",
+  "packageManager": "npm",
   "lintGuardrail": "yes",
   "product": {
     "portfolio": "Falabella Seguros",
@@ -9,10 +9,10 @@
     "designSystemPackage": "tomaco-components"
   },
   "commands": {
-    "lint": "pnpm lint",
-    "typecheck": "pnpm exec tsc --noEmit",
-    "test": "pnpm test",
-    "e2e": "pnpm exec playwright test"
+    "lint": "npm run lint",
+    "typecheck": "npx tsc --noEmit",
+    "test": "npm run test:e2e",
+    "e2e": "npm run test:e2e"
   },
   "paths": {
     "uiRoot": "src/ui",
@@ -24,7 +24,10 @@
   },
   "transport": {
     "pattern": "server-actions",
-    "options": ["server-actions", "proxy-middleware"]
+    "options": [
+      "server-actions",
+      "proxy-middleware"
+    ]
   },
   "figma": {
     "mcpExampleFile": "mcp.example.json",
@@ -42,7 +45,7 @@
   "contracts": {
     "mode": "contract-draft",
     "format": "examples",
-    "source": "TBD",
+    "source": "BFF contract pending",
     "mockStrategy": "fixtures",
     "mockLocation": "src/mocks",
     "states": "success, loading, empty, validation error, business error, network/server error",
@@ -95,5 +98,24 @@
     }
   },
   "homeroVersion": "0.21.0",
-  "homeroClient": "both"
+  "homeroClient": "both",
+  "discovery": {
+    "discoveredAt": "2026-08-21T16:25:57.725Z",
+    "projectStatus": "existing frontend repo",
+    "monorepo": "no",
+    "countries": "cl, co, pe",
+    "figmaSource": "TBD",
+    "businessGoal": "Validate the Hogar insurance sales flow",
+    "successState": "User completes the Hogar insurance sales flow",
+    "stakeholders": "TBD"
+  },
+  "stack": {
+    "framework": "Next.js 16 App Router + React 19 + TypeScript",
+    "runtime": "Node.js",
+    "forms": "React Hook Form + Zod",
+    "designSystem": "Tomaco",
+    "stylingException": "none",
+    "data": "TanStack Query for reads and Server Actions for writes",
+    "state": "Zustand only for cross-step client state"
+  }
 }
