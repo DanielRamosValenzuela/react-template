@@ -1,0 +1,109 @@
+# Verification
+
+Homero does not consider a frontend task done only because the UI exists.
+
+## Required commands
+
+Adjust the commands in `homero.config.json` to the real project scripts.
+
+- lint
+- typecheck
+- test
+- e2e: Playwright Test
+
+## Feature gate
+
+Every non-trivial frontend feature must start with:
+
+```text
+node scripts/homero/homero.mjs feature create --target . --id <id> --name <name> --figma <url> --figma-version <version> --contract-mode <mode> ...
+```
+
+It requires a non-main branch to already be checked out — create one first
+(`git checkout -b feature/<id>-<slug>`) — then writes, on that branch:
+
+- `features/<id>/feature.json`: the executable feature contract
+- `features/<id>/evidence/playwright-cli.json`: browser evidence manifest
+- `specs/<id>-<slug>/`: human-readable spec, plan, and tasks
+
+**`feature create` does not create the branch itself, and there's no
+worktree** — it writes into whatever branch is already checked out, in the
+same directory it ran from. That means only one feature can be checked out
+at a time: the working tree must be clean before a new one is created, and
+switching to a different feature means checking out its branch first
+(`git checkout feature/<id>-<slug>`).
+
+`homero feature check` blocks a feature when the Figma URL/version/node, contracts, development mocks, acceptance criteria, open questions, responsive coverage, or `plan.md`'s required sections are incomplete — everything needed to *start* implementing. It does not check Playwright CLI evidence: that can only exist once something has actually been implemented, so requiring it before implementation would make the gate impossible to pass. `homero verify` checks evidence, once there's something to verify.
+
+Not everything the constitution requires is mechanically gated. `feature.json`'s `product.designSystem` field exists and is checked, but `feature create` always writes it as `"Tomaco"` — the check only guards against hand-corrupted `feature.json`, it does not verify Tomaco was actually used correctly in the implementation. `plan.md`'s "Repo patterns to reuse" section is required non-placeholder content (principle 15), which proves a reuse search was recorded — it does not verify the search's conclusion was correct, or that a Tomaco component wasn't duplicated (principle 16). Country-logic isolation (principle 12's second half) and the human-review pause itself (principle 9) have no code-level check at all. `homero-reviewer` is the safety net for the judgment calls no gate can make — whether what was found and reused is actually correct, not just present.
+
+## Figma and visual fidelity
+
+- Figma is mandatory for visual frontend work. Record its URL, node, and approved version in `feature.json`.
+- Tomaco is mandatory. Figma output must be mapped to existing Tomaco components and design tokens.
+- Compare desktop and mobile screenshots against approved browser baselines with the configured visual-diff threshold.
+- Do not update visual baselines or accept a visual diff without human review.
+
+## Required checks before closing a task
+
+1. Structure matches the intended pattern
+2. TypeScript is clean
+3. Form validation paths are covered
+4. UI matches the approved design intent
+5. Tomaco usage respects the project conventions
+6. Backend-dependent flows use recorded contracts or clearly marked draft mocks
+7. Test files mirror the source path convention recorded in `docs/homero/conventions.md`
+8. Files importing the design system declare the required client boundary directive
+
+## Figma-specific checks
+
+- The implemented frame or node was the correct one
+- Layout and spacing were adapted to project conventions
+- Raw MCP output was translated to project code style
+- Missing design intent was clarified instead of guessed
+- The captured Figma version is the approved source for the feature
+
+## Contract and mock checks
+
+- Contract mode is recorded in `docs/homero/contracts.md`
+- Mock data is realistic and anonymized
+- Success, empty, validation error, business error, and server error states are represented when relevant
+- Draft payload assumptions are listed as follow-up questions for backend
+- If a real API diverges or fails, record the failure and use registered mocks only in development
+- Production mock fallback is prohibited
+
+## Playwright CLI evidence
+
+The agent must use Playwright CLI for real browser validation. For every required scenario, save both a screenshot and an accessibility snapshot below `features/<id>/evidence/`, then record a passed scenario in `playwright-cli.json`.
+
+Example:
+
+```json
+{
+	"schemaVersion": 1,
+	"featureId": "FEAT-001",
+	"session": "homero-FEAT-001",
+	"scenarios": [
+		{
+			"name": "user completes the quote form",
+			"status": "passed",
+			"screenshot": "evidence/screenshots/quote-desktop.png",
+			"snapshot": "evidence/snapshots/quote-desktop.yaml"
+		}
+	]
+}
+```
+
+## Receipt
+
+Run `node scripts/homero/homero.mjs verify --target . --id <id>` only after the feature gate passes. It runs the configured lint, typecheck, test, and E2E commands, then writes an immutable verification receipt with command output, branch, and Git HEAD under `features/<id>/receipts/`.
+
+`verify` fails `runtime.maxVerifyAttempts` times (2 by default) in a row and it stops running altogether — `state.phase` becomes `verify-exhausted` and the AI agent must not keep retrying on its own. Get a human to review the receipt and either fix the specific failure or say what to do next; `verify` will refuse to run again until `state.verifyAttempts` is reset or the limit is raised in `homero.config.json`.
+
+## Anti-patterns
+
+- Marking a task done without running verification commands
+- Blindly copying Tailwind or CSS from design tools
+- Inventing backend payloads without recording assumptions
+- Leaving placeholder scaffold fields in a production feature
+- Marking a feature as done without a passing Homero receipt
