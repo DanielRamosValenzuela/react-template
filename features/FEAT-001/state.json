@@ -1,0 +1,105 @@
+{
+  "schemaVersion": 1,
+  "featureId": "FEAT-001",
+  "phase": "implementing",
+  "activeTaskId": "T-004",
+  "limits": {
+    "maxIterations": 10,
+    "maxAttemptsPerTask": 3,
+    "maxVerifyAttempts": 2
+  },
+  "iterations": 5,
+  "verifyAttempts": 0,
+  "tasks": [
+    {
+      "id": "T-001",
+      "title": "Configure CL Hogar route and tooling",
+      "paths": [
+        "src/app/(root)/page.tsx",
+        "src/config/forms.ts",
+        "src/config/CountryFormResolver.tsx",
+        "src/config/constants/flowConfig.ts",
+        "playwright.config.ts",
+        "homero.config.json"
+      ],
+      "status": "done",
+      "attempts": 0,
+      "summary": "Registered HOGAR_QUOTE for CL through the existing flow config and CountryFormResolver while preserving HELLO for CO/PE; routed the root through getInitialFormByCountry; added a temporary compilable CL entrypoint; updated Playwright discovery/viewports and npm CLI commands. Verified with npx tsc --noEmit and npx playwright test --list.",
+      "blockReason": null,
+      "createdAt": "2026-08-21T15:30:28.792Z",
+      "startedAt": "2026-08-21T15:30:37.647Z",
+      "updatedAt": "2026-08-21T15:35:02.652Z",
+      "completedAt": "2026-08-21T15:35:02.652Z"
+    },
+    {
+      "id": "T-002",
+      "title": "Implement Hogar validation and Tomaco controls",
+      "paths": [
+        "src/ui/cl/HogarQuoteForm/schema.ts",
+        "src/ui/cl/HogarQuoteForm/useHogarQuoteForm.ts",
+        "src/widgets/form-controls"
+      ],
+      "status": "done",
+      "attempts": 0,
+      "summary": "Implemented Zod validation and local RHF form behavior with CL RUT modulo-11 helpers, phone normalization, dynamic 100/19-year date bounds and eligibility states; enhanced Input/CheckBox controllers and added a controlled InputDateController using the confirmed Tomaco 1.14.42 API. Verified with npx tsc --noEmit and focused ESLint.",
+      "blockReason": null,
+      "createdAt": "2026-08-21T15:30:28.832Z",
+      "startedAt": "2026-08-21T15:35:06.638Z",
+      "updatedAt": "2026-08-21T15:44:04.503Z",
+      "completedAt": "2026-08-21T15:44:04.503Z"
+    },
+    {
+      "id": "T-003",
+      "title": "Build responsive Hogar form and information dialog",
+      "paths": [
+        "src/ui/cl/HogarQuoteForm",
+        "src/app/globals.css",
+        "public/cl/hogar"
+      ],
+      "status": "done",
+      "attempts": 1,
+      "summary": "Implemented the responsive CL Hogar root UI with approved Figma assets, country-gated banner, Tomaco/RHF form, broad InputDate input bounds plus separate age eligibility, information Dialog and scoped responsive CSS. Verified with TypeScript, focused ESLint, Prettier, production build, and Playwright CLI smoke at 1280x720 and 360x800: no console errors or horizontal overflow; modal tabs/body lock/Escape/focus restore work; 1910 and 2022 produce their distinct approved alerts. Temporary browser and server were stopped.",
+      "blockReason": "Tomaco InputDate coerces values outside minDate/maxDate to today, making the approved over/under-age alert states unreachable with the planned bounds; the implementer also lacked figma tools needed to export the six approved assets without fabricating substitutes.",
+      "createdAt": "2026-08-21T15:30:28.874Z",
+      "startedAt": "2026-08-21T15:44:08.913Z",
+      "updatedAt": "2026-08-21T16:13:26.043Z",
+      "completedAt": "2026-08-21T16:13:26.043Z"
+    },
+    {
+      "id": "T-004",
+      "title": "Add focused form and route tests",
+      "paths": [
+        "test/ui/cl/HogarQuoteForm",
+        "test/app/(root)",
+        "src/ui/cl/Hello",
+        "test/ui/cl/Hello"
+      ],
+      "status": "in-progress",
+      "attempts": 0,
+      "summary": null,
+      "blockReason": null,
+      "createdAt": "2026-08-21T15:30:28.914Z",
+      "startedAt": "2026-08-21T16:13:29.362Z",
+      "updatedAt": "2026-08-21T16:13:29.362Z",
+      "completedAt": null
+    },
+    {
+      "id": "T-005",
+      "title": "Capture browser evidence and converge visual fidelity",
+      "paths": [
+        "features/FEAT-001/evidence",
+        "src/ui/cl/HogarQuoteForm",
+        "src/app/globals.css"
+      ],
+      "status": "pending",
+      "attempts": 0,
+      "summary": null,
+      "blockReason": null,
+      "createdAt": "2026-08-21T15:30:28.953Z",
+      "startedAt": null,
+      "updatedAt": "2026-08-21T15:30:28.953Z",
+      "completedAt": null
+    }
+  ],
+  "updatedAt": "2026-08-21T16:13:29.363Z"
+}

@@ -108,3 +108,463 @@ a {
 label {
   box-shadow: none !important;
 }
+
+.hogar-quote-shell,
+.hogar-quote-shell * {
+  letter-spacing: 0;
+}
+
+.hogar-quote-banner {
+  width: 100%;
+  height: 56px;
+  overflow: hidden;
+  color: var(--neutral0);
+  background: #3aae2a;
+}
+
+.hogar-quote-banner__inner {
+  width: 100%;
+  max-width: 1152px;
+  height: 56px;
+  padding: 0 8px;
+  margin: 0 auto;
+}
+
+.hogar-quote-banner__message {
+  width: 184px;
+  min-width: 184px;
+}
+
+.hogar-quote-banner__message img {
+  flex: 0 0 32px;
+}
+
+.hogar-quote-banner__copy {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  font-size: 12px;
+  line-height: 14px;
+  white-space: nowrap;
+}
+
+.hogar-quote-banner__copy strong {
+  overflow: hidden;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 18px;
+  text-overflow: clip;
+}
+
+.hogar-quote-banner__desktop-copy,
+.hogar-quote-banner__promotion-desktop {
+  display: none;
+}
+
+.hogar-quote-banner__mobile-copy,
+.hogar-quote-banner__promotion-mobile {
+  display: block;
+}
+
+.hogar-quote-banner__promotion {
+  width: 160px;
+  height: 50px;
+  overflow: hidden;
+  flex: 0 0 160px;
+}
+
+.hogar-quote-banner__promotion img {
+  max-width: 100%;
+  object-fit: contain;
+}
+
+.hogar-quote-shell .sf-header {
+  z-index: 10;
+  margin-bottom: 40px;
+  background: var(--blueberry5);
+  border-bottom: 1px solid var(--blueberry10);
+}
+
+.hogar-quote-page {
+  width: 100%;
+}
+
+.hogar-quote-form {
+  width: 100%;
+  color: var(--neutral80);
+}
+
+.hogar-quote-form__title {
+  height: 75px;
+  margin-bottom: 40px;
+}
+
+.hogar-quote-form__title p {
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 30px;
+}
+
+.hogar-quote-form__title h1 {
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 45px;
+}
+
+.hogar-quote-form__title img {
+  flex: 0 0 40px;
+}
+
+.hogar-quote-form__card {
+  min-height: 940px;
+  overflow: hidden;
+  box-shadow: 0 1px 1px rgb(0 0 0 / 5%);
+}
+
+.hogar-quote-form__card-header {
+  min-height: 80px;
+  padding: 12px 16px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  background: var(--blueberry5);
+  border: 1px solid var(--blueberry10);
+  border-radius: 8px 8px 0 0;
+}
+
+.hogar-quote-form__card-header p {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+}
+
+.hogar-quote-form__intro-desktop {
+  display: none;
+}
+
+.hogar-quote-form__intro-mobile {
+  display: inline;
+}
+
+.hogar-quote-form__info-button.btn.link {
+  min-width: 0;
+  min-height: 0;
+  padding: 0;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+}
+
+.hogar-quote-form__card-body {
+  min-height: 860px;
+  padding: 40px 24px;
+}
+
+.hogar-quote-form__fields-form {
+  min-height: 780px;
+}
+
+.hogar-quote-form__field,
+.hogar-quote-form__field .react-datepicker-wrapper,
+.hogar-quote-form__field .react-datepicker__input-container,
+.hogar-quote-form__field .input-text-container,
+.hogar-quote-form__field .prefix-input {
+  width: 100%;
+}
+
+.hogar-quote-shell .hogar-quote-form__field label {
+  display: inline-block;
+  margin-bottom: 8px !important;
+  color: var(--neutral80);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 23px !important;
+}
+
+.hogar-quote-form__field input {
+  letter-spacing: 0;
+}
+
+.hogar-quote-form__phone .prefix-input,
+.hogar-quote-form__phone .prefix-input input {
+  min-height: 64px;
+  max-height: 64px;
+}
+
+.hogar-quote-form__consent {
+  min-height: 96px;
+}
+
+.hogar-quote-form__consent article {
+  display: flex;
+  width: 100%;
+  min-height: inherit;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.hogar-quote-form__consent input {
+  width: 24px;
+  min-width: 24px;
+  height: 24px;
+  margin: 0;
+}
+
+.hogar-quote-form__consent label {
+  color: var(--neutral80);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+.hogar-quote-form__consent a {
+  color: var(--accent);
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+.hogar-quote-form__advisor {
+  width: 100%;
+  min-height: 80px;
+  padding: 16px 24px;
+  background: var(--neutral5);
+  border-radius: 8px;
+}
+
+.hogar-quote-form__advisor label {
+  color: var(--neutral80);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+}
+
+.hogar-quote-form__advisor .form-switch {
+  flex: 0 0 auto;
+}
+
+.hogar-quote-form__actions .alert {
+  width: 100%;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.hogar-quote-form__faq {
+  width: 100%;
+  height: 48px;
+  margin-top: 40px;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.hogar-info-dialog-root .dialog__overlay {
+  align-items: flex-end;
+  padding: 0 !important;
+}
+
+.hogar-info-dialog {
+  width: 100% !important;
+  min-width: 0 !important;
+  max-width: none !important;
+  max-height: 95vh;
+  overflow: hidden;
+  border-radius: 12px 12px 0 0;
+}
+
+.hogar-info-dialog .dialog__container {
+  display: flex;
+  max-height: 95vh;
+  flex-direction: column;
+}
+
+.hogar-info-dialog .dialog__close-header {
+  min-height: 56px;
+}
+
+.hogar-info-dialog .dialog__close-btn {
+  width: 40px;
+  height: 40px;
+}
+
+.hogar-info-dialog .dialog__title {
+  color: var(--neutral80);
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 33px;
+}
+
+.hogar-info-dialog .dialog__body {
+  min-height: 0;
+  padding: 0 24px 32px;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.hogar-info-dialog__content {
+  width: 100%;
+  max-width: 100%;
+  color: var(--neutral80);
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.hogar-info-dialog__lead {
+  margin-bottom: 24px;
+}
+
+.hogar-info-dialog__benefit img {
+  flex: 0 0 40px;
+}
+
+.hogar-info-dialog__benefit h3,
+.hogar-info-dialog__detail h3 {
+  margin-bottom: 8px;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 27px;
+}
+
+.hogar-info-dialog__tabs {
+  width: 100%;
+  margin-top: 32px;
+}
+
+.hogar-info-dialog__tabs .tabs__tab {
+  min-height: 43px;
+  padding: 9px 8px;
+}
+
+.hogar-info-dialog__tabs .tabs__title {
+  font-size: 14px;
+  line-height: 21px;
+}
+
+.hogar-info-dialog__panel {
+  margin-top: 32px;
+}
+
+.hogar-info-dialog__detail strong {
+  display: block;
+  margin-top: 8px;
+}
+
+.hogar-info-dialog__detail ul {
+  padding-left: 24px;
+  margin-top: 8px;
+}
+
+.hogar-info-dialog__detail li + li {
+  margin-top: 4px;
+}
+
+@media (min-width: 768px) {
+  .hogar-quote-banner__inner {
+    padding: 0;
+  }
+
+  .hogar-quote-banner__message {
+    width: auto;
+    min-width: 0;
+  }
+
+  .hogar-quote-banner__desktop-copy,
+  .hogar-quote-banner__promotion-desktop {
+    display: block;
+  }
+
+  .hogar-quote-banner__mobile-copy,
+  .hogar-quote-banner__promotion-mobile {
+    display: none;
+  }
+
+  .hogar-quote-banner__promotion {
+    width: 223px;
+    height: 44px;
+    flex-basis: 223px;
+  }
+
+  .hogar-quote-shell .sf-header {
+    margin-bottom: 56px;
+  }
+
+  .hogar-quote-form__title {
+    margin-bottom: 48px;
+  }
+
+  .hogar-quote-form__card {
+    min-height: 841px;
+  }
+
+  .hogar-quote-form__card-header {
+    height: 59px;
+    min-height: 59px;
+    padding: 16px 24px;
+    flex-direction: row;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .hogar-quote-form__card-header p {
+    font-size: 18px;
+    line-height: 27px;
+  }
+
+  .hogar-quote-form__intro-desktop {
+    display: inline;
+  }
+
+  .hogar-quote-form__intro-mobile {
+    display: none;
+  }
+
+  .hogar-quote-form__card-body {
+    min-height: 782px;
+    padding: 40px;
+  }
+
+  .hogar-quote-form__fields-form {
+    min-height: 702px;
+  }
+
+  .hogar-quote-form__phone .prefix-input,
+  .hogar-quote-form__phone .prefix-input input {
+    min-height: 56px;
+    max-height: 56px;
+  }
+
+  .hogar-quote-form__consent {
+    min-height: 48px;
+  }
+
+  .hogar-quote-form__advisor {
+    min-height: 58px;
+  }
+
+  .hogar-info-dialog-root .dialog__overlay {
+    align-items: center;
+    padding: 24px !important;
+  }
+
+  .hogar-info-dialog {
+    width: 640px !important;
+    min-width: 640px !important;
+    max-width: 640px !important;
+    max-height: calc(100vh - 48px);
+    border-radius: 12px;
+    box-shadow:
+      0 6px 12px rgb(0 0 0 / 5%),
+      0 1px 1px rgb(0 0 0 / 5%);
+  }
+
+  .hogar-info-dialog .dialog__container {
+    max-height: calc(100vh - 48px);
+  }
+
+  .hogar-info-dialog__tabs .tabs__tab {
+    padding: 9px 16px;
+  }
+
+  .hogar-info-dialog__tabs .tabs__title {
+    font-size: 16px;
+    line-height: 24px;
+  }
+}

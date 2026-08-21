@@ -1,0 +1,88 @@
+{
+  "schemaVersion": 1,
+  "id": "FEAT-001",
+  "name": "Hogar Quote Root Page",
+  "status": "implementing",
+  "branch": "test/homero-5",
+  "product": {
+    "portfolio": "Falabella Seguros",
+    "designSystem": "Tomaco",
+    "countries": [
+      "cl"
+    ]
+  },
+  "design": {
+    "visualChange": true,
+    "figma": {
+      "url": "https://www.figma.com/design/ygl9QrEtz0s3nvLUyCzr1W/-HOGAR--Web-2.0?node-id=3165-14184&m=dev",
+      "nodeId": "3165-14184",
+      "version": "current-approved-2026-08-21"
+    },
+    "viewports": [
+      "desktop",
+      "mobile"
+    ],
+    "visualDiffThreshold": 0.01
+  },
+  "contracts": {
+    "mode": "no-backend-exception",
+    "source": null,
+    "exception": "Current scope is a client-side prototype: Continue only runs local form validation and intentionally performs no navigation, persistence, analytics, or backend request. Future BFF integration requires a separate contract-backed feature.",
+    "productionMockFallbackAllowed": false,
+    "mocks": {
+      "location": "src/mocks",
+      "registered": false,
+      "source": null
+    }
+  },
+  "requirements": {
+    "acceptanceCriteria": [
+      "Con country cl, / obtiene HOGAR_QUOTE desde flowConfig y lo carga mediante el CountryFormResolver existente; no se crea CountryResolver.",
+      "La pantalla desktop a 1280px reproduce el nodo 3165:14184 y la pantalla mobile a 360px reproduce el nodo 3165:14757.",
+      "Desktop muestra el copy literal Conoce cómo funciona este seguro y mobile muestra Conoce cómo funciona este seguros.",
+      "El estado inicial presenta los cuatro campos vacíos, consentimiento desmarcado, ayuda de asesor apagada y Continuar habilitado.",
+      "RUT, fecha de nacimiento, correo y teléfono son obligatorios y muestran literalmente sus errores aprobados en modo onTouched y después de un submit inválido.",
+      "El RUT se normaliza y valida con módulo 11, el correo usa validación estándar, y el teléfono mantiene +56 fijo y acepta exactamente nueve dígitos comenzando con 9.",
+      "InputDate es controlado y admite fechas entre 1900-01-01 y hoy; Zod aplica por separado los límites de elegibilidad de hoy menos 100 años inclusive y hoy menos 19 años inclusive.",
+      "Una fecha anterior al límite técnico de 100 años muestra la alerta del nodo 3165:16386 y una fecha posterior al límite de 19 años muestra la alerta del nodo 3165:16432; ambas mantienen el formulario inválido.",
+      "El consentimiento es obligatorio, no muestra error de campo y un submit inválido muestra Completa la información solicitada para avanzar debajo del CTA.",
+      "Un submit inválido enfoca y desplaza al primer control inválido en el orden RUT, fecha, correo, teléfono y consentimiento.",
+      "Con datos válidos, Continuar solo ejecuta validación local: no navega, no muestra éxito, no persiste, no emite analytics y no realiza requests.",
+      "El switch de ayuda de asesor solo alterna un boolean local y no revela, valida, persiste ni envía campos adicionales.",
+      "Más información abre Dialog en Coberturas y asistencias; X, Escape y click exterior lo cierran; usa scroll interno, bloquea el body, restaura foco y al reabrir reinicia tab y scroll.",
+      "El Dialog permite alternar Coberturas y asistencias y Glosario y reproduce literalmente los nodos 3165:16815 y 3165:16842.",
+      "Preguntas frecuentes abre https://example.com/preguntas-frecuentes en una pestaña nueva y no abre una superficie interna.",
+      "Política de privacidad abre https://example.com/politica-de-privacidad en una pestaña nueva y su click no modifica el checkbox.",
+      "El logo conserva el destino /; banner y promoción no son interactivos y los assets redundantes con texto adyacente son decorativos.",
+      "Ninguna PII se registra, persiste o envía, y no existen actions, contratos, fixtures ni fallback de mocks para esta feature.",
+      "Las comparaciones visuales usan threshold 0.01; toda diferencia no solucionable requiere revisión humana y nunca actualiza automáticamente el baseline."
+    ],
+    "uiStates": [
+      "cl-initial-desktop-1280-node-3165-14184",
+      "cl-initial-mobile-360-node-3165-14757",
+      "cl-invalid-submit-field-errors-general-message-and-first-invalid-focus-node-3165-16339",
+      "cl-consent-only-invalid-submit-general-message-without-field-error",
+      "cl-invalid-real-date-future-field-error",
+      "cl-date-older-than-100-year-technical-limit-warning-node-3165-16386",
+      "cl-date-younger-than-19-year-boundary-warning-node-3165-16432",
+      "cl-valid-submit-local-validation-no-op",
+      "cl-advisor-help-off-and-on-local-only",
+      "cl-information-dialog-coverages-initial-node-3165-16815",
+      "cl-information-dialog-glossary-node-3165-16842",
+      "cl-information-dialog-close-and-reopen-reset",
+      "cl-external-faq-and-privacy-links-new-tab"
+    ],
+    "openQuestions": []
+  },
+  "verification": {
+    "required": [
+      "lint",
+      "typecheck",
+      "test",
+      "e2e",
+      "playwright-cli"
+    ],
+    "playwrightCliEvidence": "evidence/playwright-cli.json"
+  },
+  "receipt": null
+}

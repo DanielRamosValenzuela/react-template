@@ -8,13 +8,23 @@ export default defineConfig({
   fullyParallel: true,
   projects: [
     {
-      name: 'chromium',
-      use: { ...devices['Desktop Chrome'] },
+      name: 'desktop',
+      use: {
+        ...devices['Desktop Chrome'],
+        viewport: { height: 720, width: 1280 },
+      },
+    },
+    {
+      name: 'mobile',
+      use: {
+        ...devices['Desktop Chrome'],
+        viewport: { height: 800, width: 360 },
+      },
     },
   ],
   reporter: 'html',
   retries: process.env.CI ? 2 : 0,
-  testDir: './test/ui',
+  testDir: './test',
   use: {
     baseURL: 'http://localhost:3002',
     trace: 'on-first-retry',

@@ -14,6 +14,7 @@ import { Loader } from 'tomaco-components';
 
 type CountryFormPropsByName = {
   [FORM_NAMES.HELLO]: Record<string, never>;
+  [FORM_NAMES.HOGAR_QUOTE]: Record<string, never>;
 };
 
 type CountryFormComponentMap = {
@@ -31,6 +32,7 @@ const EMPTY_COMPONENT_PROPS = {} as const;
 const FORM_COMPONENTS_BY_COUNTRY: Partial<Record<TCountry, Partial<CountryFormComponentMap>>> = {
   cl: {
     [FORM_NAMES.HELLO]: lazy(() => import('@/ui/cl/Hello')),
+    [FORM_NAMES.HOGAR_QUOTE]: lazy(() => import('@/ui/cl/HogarQuoteForm')),
   },
   co: {
     [FORM_NAMES.HELLO]: lazy(() => import('@/ui/co/Hello')),

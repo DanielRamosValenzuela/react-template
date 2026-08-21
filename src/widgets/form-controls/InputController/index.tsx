@@ -17,6 +17,8 @@ interface InputControllerProps<TFieldValues extends FieldValues> extends Omit<
 
 export const InputController = <TFieldValues extends FieldValues>({
   control,
+  errorText,
+  isValid,
   name,
   transform,
   ...inputProps
@@ -24,12 +26,16 @@ export const InputController = <TFieldValues extends FieldValues>({
   <Controller
     control={control}
     name={name}
-    render={({ field }) => (
+    render={({ field, fieldState }) => (
       <Input
         {...inputProps}
-        {...field}
+        errorText={errorText ?? fieldState.error?.message}
+        isValid={isValid ?? !fieldState.error}
+        name={field.name}
+        onBlur={field.onBlur}
         value={field.value ?? ''}
         onChange={(event) => field.onChange(transform?.(event.target.value) ?? event.target.value)}
+        ref={field.ref}
       />
     )}
   />

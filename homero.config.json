@@ -35,9 +35,9 @@
     "visualDiffThreshold": 0.01
   },
   "playwright": {
-    "cliCommand": "pnpm exec playwright-cli",
+    "cliCommand": "npx playwright-cli",
     "evidenceRoot": "features/<id>/evidence",
-    "testCommand": "pnpm exec playwright test"
+    "testCommand": "npx playwright test"
   },
   "graphify": {
     "target": "src"

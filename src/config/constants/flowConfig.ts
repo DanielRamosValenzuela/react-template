@@ -10,7 +10,7 @@ export interface FlowStep {
 }
 
 export const FLOW_STEPS_BY_COUNTRY: Record<TCountry, FlowStep[]> = {
-  cl: [{ formName: FORM_NAMES.HELLO, label: 'Inicio', path: '/' }],
+  cl: [{ formName: FORM_NAMES.HOGAR_QUOTE, label: 'Inicio', path: '/' }],
   co: [{ formName: FORM_NAMES.HELLO, label: 'Inicio', path: '/' }],
   pe: [{ formName: FORM_NAMES.HELLO, label: 'Inicio', path: '/' }],
 };

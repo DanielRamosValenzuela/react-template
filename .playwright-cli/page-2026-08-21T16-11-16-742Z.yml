@@ -1,0 +1,56 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - complementary "Promoción Seguro de Hogar" [ref=e3]:
+      - generic [ref=e7]:
+        - generic [ref=e8]: Contrata tu
+        - strong [ref=e9]: Seguro de hogar facil y rápido
+    - link [ref=e16] [cursor=pointer]:
+      - /url: /
+      - img "Falabella Seguros" [ref=e17]
+    - main [ref=e18]:
+      - generic [ref=e19]:
+        - generic [ref=e20]:
+          - paragraph [ref=e21]: Cotizador de seguros de
+          - heading "Hogar" [level=1] [ref=e24]
+        - generic [ref=e25]:
+          - generic [ref=e26]:
+            - paragraph [ref=e27]: Conoce cómo funciona este seguro
+            - link "Más información" [ref=e28] [cursor=pointer]:
+              - /url: /
+          - generic [ref=e30]:
+            - generic [ref=e31]:
+              - generic [ref=e32]:
+                - generic [ref=e33]: RUT del asegurado
+                - textbox "RUT del asegurado" [ref=e35]:
+                  - /placeholder: "Ej: 12.345.678-9"
+              - generic [ref=e38]:
+                - generic [ref=e39]: Fecha de nacimiento
+                - generic [ref=e40]:
+                  - textbox "Fecha de nacimiento" [ref=e41]:
+                    - /placeholder: DD/MM/AAAA
+                  - button "Accion de icono":
+                    - generic [ref=e42] [cursor=pointer]
+              - generic [ref=e43]:
+                - generic [ref=e44]: Correo electrónico
+                - textbox "Correo electrónico" [ref=e46]:
+                  - /placeholder: "Ej: correo@email.com"
+              - generic [ref=e47]:
+                - generic [ref=e48]: Teléfono
+                - generic [ref=e49]:
+                  - generic [ref=e50]: "+56"
+                  - textbox "Teléfono" [ref=e51]:
+                    - /placeholder: "987654321"
+            - article [ref=e53]:
+              - checkbox "Acepto que me contacten para terminar el proceso de contratación del seguro según la política de privacidad ." [ref=e54] [cursor=pointer]
+              - generic [ref=e55] [cursor=pointer]:
+                - text: Acepto que me contacten para terminar el proceso de contratación del seguro según la
+                - link "política de privacidad" [ref=e56]:
+                  - /url: https://example.com/politica-de-privacidad
+                - text: .
+            - generic [ref=e57]:
+              - generic [ref=e58]: Estoy recibiendo ayuda de un asesor
+              - checkbox "Estoy recibiendo ayuda de un asesor" [ref=e60] [cursor=pointer]
+            - button "Continuar" [ref=e62] [cursor=pointer]
+        - link "Preguntas frecuentes" [ref=e63] [cursor=pointer]:
+          - /url: https://example.com/preguntas-frecuentes
+  - alert [ref=e64]
