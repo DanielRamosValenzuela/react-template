@@ -9,7 +9,7 @@ export interface FormContract<TStoreValues, TPayload, TResponse> {
   countries: TCountry[];
   formName: string;
   mockPath: string;
-  source: 'backend-contract' | 'draft-contract' | 'no-contract-exception';
+  source: 'backend-contract' | 'draft-contract' | 'no-backend-exception';
   storeKey: string;
   successExample: TResponse;
 }

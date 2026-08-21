@@ -1,0 +1,263 @@
+{
+  "communities": {
+    "0": [
+      "app_layout",
+      "app_layout_metadata",
+      "app_layout_rootlayout",
+      "config_environment",
+      "config_environment_commonconfig",
+      "config_environment_resolvecountry",
+      "config_environment_resolveenvironment",
+      "config_queryprovider",
+      "config_queryprovider_queryprovider",
+      "config_queryprovider_queryproviderprops",
+      "config_types",
+      "config_types_countries",
+      "config_types_iscountry",
+      "config_types_publicconfig",
+      "config_types_tenvironment",
+      "contexts_configcontext",
+      "contexts_configcontext_configcontext",
+      "contexts_configcontext_configcontextprovider",
+      "contexts_configcontext_configcontextproviderprops",
+      "contexts_configcontext_useconfig",
+      "contexts_index",
+      "widgets_header_index"
+    ],
+    "1": [
+      "app_root_page",
+      "app_root_page_home",
+      "config_countryformresolver",
+      "config_countryformresolver_countryformcomponentmap",
+      "config_countryformresolver_countryformpropsbyname",
+      "config_countryformresolver_countryformresolver",
+      "config_countryformresolver_empty_component_props",
+      "config_countryformresolver_form_components_by_country",
+      "config_forms",
+      "config_forms_form_names",
+      "ui_cl_hello_index",
+      "ui_cl_hello_index_clhello",
+      "ui_co_hello_index",
+      "ui_co_hello_index_cohello",
+      "ui_pe_hello_index",
+      "ui_pe_hello_index_pehello",
+      "widgets_pagecard_index",
+      "widgets_pagecard_index_pagecard",
+      "widgets_pagecard_index_pagecardprops"
+    ],
+    "2": [
+      "app_error",
+      "app_error_error",
+      "app_global_error",
+      "app_global_error_globalerror",
+      "app_loading",
+      "app_loading_loading",
+      "app_not_found",
+      "app_not_found_notfound",
+      "widgets_detailrow_index",
+      "widgets_detailrow_index_detailrow",
+      "widgets_detailrow_index_detailrowprops",
+      "widgets_errordisplay_index",
+      "widgets_errordisplay_index_errordisplay",
+      "widgets_errordisplay_index_errordisplayprops",
+      "widgets_header_index_header",
+      "widgets_index",
+      "widgets_loadercomponent_index",
+      "widgets_loadercomponent_index_loadercomponent"
+    ],
+    "3": [
+      "config_constants_flowconfig",
+      "config_constants_flowconfig_flow_step_cookie",
+      "config_constants_flowconfig_flow_steps_by_country",
+      "config_constants_flowconfig_flowstep",
+      "config_constants_flowconfig_getinitialformbycountry",
+      "config_forms_tformname",
+      "utils_client_flowstep",
+      "utils_client_flowstep_clearflowstep",
+      "utils_client_flowstep_setflowstep"
+    ],
+    "4": [
+      "store_commonstore_index",
+      "store_commonstore_index_commonstore",
+      "store_commonstore_index_commonstorevalues",
+      "store_commonstore_index_getdefaultvalues",
+      "store_commonstore_index_usecommonstore",
+      "store_commonstore_index_usezustandstore",
+      "store_index",
+      "utils_client_sessionstorage",
+      "utils_client_sessionstorage_browsersessionstorage"
+    ],
+    "5": [
+      "widgets_form_controls_checkboxcontroller_index",
+      "widgets_form_controls_checkboxcontroller_index_checkboxcontroller",
+      "widgets_form_controls_checkboxcontroller_index_checkboxcontrollerprops",
+      "widgets_form_controls_checkboxcontroller_index_checkboxprops",
+      "widgets_form_controls_index",
+      "widgets_form_controls_inputcontroller_index",
+      "widgets_form_controls_inputcontroller_index_inputcontroller",
+      "widgets_form_controls_inputcontroller_index_inputcontrollerprops",
+      "widgets_form_controls_inputcontroller_index_inputprops"
+    ],
+    "6": [
+      "utils_functions_formatters",
+      "utils_functions_formatters_formatphone",
+      "utils_functions_formatters_normalizedocument",
+      "utils_functions_formatters_onlydigits",
+      "utils_functions_index",
+      "utils_functions_validations",
+      "utils_functions_validations_isvaliddocumentbycountry",
+      "utils_functions_validations_isvalidphone"
+    ],
+    "7": [
+      "config_countryformresolver_countryformresolverprops",
+      "config_types_tcountry",
+      "contracts_forms_index",
+      "contracts_forms_types",
+      "contracts_forms_types_contractbuildcontext",
+      "contracts_forms_types_formcontract",
+      "contracts_index"
+    ],
+    "8": [
+      "proxy",
+      "proxy_config",
+      "proxy_flow_steps",
+      "proxy_getbackpath",
+      "proxy_getstepindex",
+      "proxy_protected_routes",
+      "proxy_proxy"
+    ],
+    "9": [
+      "widgets_cardsectiontitle_index",
+      "widgets_cardsectiontitle_index_cardsectiontitle",
+      "widgets_cardsectiontitle_index_cardsectiontitleprops",
+      "widgets_formsection_index",
+      "widgets_formsection_index_formsection",
+      "widgets_formsection_index_formsectionprops"
+    ]
+  },
+  "cohesion": {
+    "0": 0.1471861471861472,
+    "1": 0.1286549707602339,
+    "2": 0.1503267973856209,
+    "3": 0.2777777777777778,
+    "4": 0.3888888888888889,
+    "5": 0.2777777777777778,
+    "6": 0.4642857142857143,
+    "7": 0.5714285714285714,
+    "8": 0.38095238095238093,
+    "9": 0.4
+  },
+  "gods": [
+    {
+      "id": "config_types_tcountry",
+      "label": "TCountry",
+      "degree": 11
+    },
+    {
+      "id": "config_forms_tformname",
+      "label": "TFormName",
+      "degree": 6
+    },
+    {
+      "id": "widgets_header_index_header",
+      "label": "Header()",
+      "degree": 6
+    },
+    {
+      "id": "config_forms_form_names",
+      "label": "FORM_NAMES",
+      "degree": 5
+    },
+    {
+      "id": "store_commonstore_index_commonstorevalues",
+      "label": "CommonStoreValues",
+      "degree": 5
+    },
+    {
+      "id": "config_environment_commonconfig",
+      "label": "commonConfig",
+      "degree": 4
+    },
+    {
+      "id": "config_types_publicconfig",
+      "label": "PublicConfig",
+      "degree": 4
+    },
+    {
+      "id": "contexts_configcontext_useconfig",
+      "label": "useConfig()",
+      "degree": 4
+    },
+    {
+      "id": "contracts_forms_types_contractbuildcontext",
+      "label": "ContractBuildContext",
+      "degree": 4
+    },
+    {
+      "id": "contracts_forms_types_formcontract",
+      "label": "FormContract",
+      "degree": 4
+    }
+  ],
+  "surprises": [
+    {
+      "source": "CommonStoreValues",
+      "target": "TFormName",
+      "source_files": [
+        "store/CommonStore/index.ts",
+        "config/forms.ts"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "references",
+      "why": "connects across different repos/directories; bridges separate communities"
+    },
+    {
+      "source": "CommonStoreValues",
+      "target": "TCountry",
+      "source_files": [
+        "store/CommonStore/index.ts",
+        "config/types.ts"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "references",
+      "why": "connects across different repos/directories; bridges separate communities"
+    },
+    {
+      "source": "Header()",
+      "target": "useConfig()",
+      "source_files": [
+        "widgets/Header/index.tsx",
+        "contexts/ConfigContext.tsx"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "calls",
+      "why": "connects across different repos/directories; bridges separate communities"
+    },
+    {
+      "source": "ContractBuildContext",
+      "target": "TCountry",
+      "source_files": [
+        "contracts/forms/types.ts",
+        "config/types.ts"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "references",
+      "why": "connects across different repos/directories"
+    },
+    {
+      "source": "FormContract",
+      "target": "TCountry",
+      "source_files": [
+        "contracts/forms/types.ts",
+        "config/types.ts"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "references",
+      "why": "connects across different repos/directories"
+    }
+  ],
+  "tokens": {
+    "input": 0,
+    "output": 0
+  }
+}

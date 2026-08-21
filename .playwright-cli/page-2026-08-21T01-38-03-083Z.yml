@@ -1,0 +1,129 @@
+- generic [ref=f1e1]:
+  - img "Falabella Seguros" [ref=f1e6]
+  - main [ref=f1e7]:
+    - heading "Cotizador de seguros de Hogar" [level=1] [ref=f1e8]:
+      - generic [ref=f1e9]: Cotizador de seguros de
+      - generic [ref=f1e10]: Hogar
+    - generic [ref=f1e13]:
+      - generic [ref=f1e14]:
+        - generic [ref=f1e15]:
+          - paragraph [ref=f1e16]: Conoce cómo funciona este seguro
+          - link "Más información" [ref=f1e17] [cursor=pointer]:
+            - /url: "#seguro-de-hogar"
+        - generic [ref=f1e18]:
+          - generic [ref=f1e19]:
+            - generic [ref=f1e20]: RUT del asegurado
+            - textbox "RUT del asegurado" [ref=f1e22]:
+              - /placeholder: "Ej: 12.345.678-9"
+            - generic [ref=f1e24]:
+              - generic [ref=f1e25]: Fecha de nacimiento
+              - generic [ref=f1e26]:
+                - textbox "Fecha de nacimiento" [ref=f1e27]:
+                  - /placeholder: DD/MM/AAAA
+                - button "Accion de icono":
+                  - generic [ref=f1e28] [cursor=pointer]
+            - generic [ref=f1e29]: Correo electrónico
+            - textbox "Correo electrónico" [ref=f1e31]:
+              - /placeholder: "Ej: correo@email.com"
+            - generic [ref=f1e32]: Teléfono
+            - generic [ref=f1e33]:
+              - generic [ref=f1e34]: "+56"
+              - textbox "Teléfono" [ref=f1e35]:
+                - /placeholder: "987654321"
+          - generic [ref=f1e36]:
+            - article [ref=f1e38]:
+              - checkbox "Acepto que me contacten para terminar el proceso de contratación del seguro según la política de privacidad." [ref=f1e61] [cursor=pointer]
+            - generic [ref=f1e40]:
+              - generic [ref=f1e41]: Acepto que me contacten para terminar el proceso de contratación del seguro según la
+              - link "política de privacidad." [ref=f1e42] [cursor=pointer]:
+                - /url: "#politica-de-privacidad"
+          - generic [ref=f1e43]:
+            - generic [ref=f1e44]:
+              - generic [ref=f1e45]: Estoy recibiendo ayuda de un asesor
+              - checkbox "Estoy recibiendo ayuda de un asesor" [checked] [ref=f1e47] [cursor=pointer]
+            - generic [ref=f1e62]:
+              - generic [ref=f1e63]:
+                - generic [ref=f1e64]: Código del asesor
+                - 'button "Código de asesor: Si estás siendo atendido por un ejecutivo, ingresa el código que te proporcione." [ref=f1e65] [cursor=pointer]':
+                  - img "Interrogation Icon" [ref=f1e68]
+              - textbox "Código del asesor" [ref=f1e70]:
+                - /placeholder: "Ej: 12345678"
+          - button "Continuar" [ref=f1e48] [cursor=pointer]
+      - paragraph [ref=f1e49]:
+        - text: Si tienes dudas sobre los seguros de hogar, revisa las
+        - link "preguntas frecuentes" [ref=f1e50] [cursor=pointer]:
+          - /url: "#preguntas-frecuentes"
+      - dialog "Seguro de Hogar" [ref=f1e74]:
+        - button "Cerrar dialogo" [active] [ref=f1e76] [cursor=pointer]
+        - generic [ref=f1e77]:
+          - generic [ref=f1e78]: Seguro de Hogar
+          - generic [ref=f1e79]:
+            - generic [ref=f1e80]: Seguro de Hogar
+            - generic [ref=f1e81]:
+              - paragraph [ref=f1e82]: Protege lo que más te importa dentro de tu hogar frente a imprevistos como robos, incendios y otros daños.
+              - generic [ref=f1e83]:
+                - generic [ref=f1e84]:
+                  - heading "Protege lo que hay en tu hogar" [level=3] [ref=f1e85]
+                  - paragraph [ref=f1e86]: Tu seguro protege muebles, electrodomésticos y objetos de uso personal, ayudándote a enfrentar imprevistos sin afectar tu tranquilidad. Además, cuenta con diferentes asistencias 24/7 ante emergencia en tu hogar.
+                - generic [ref=f1e87]:
+                  - heading "Activa tu seguro de forma rápida y simple" [level=3] [ref=f1e88]
+                  - paragraph [ref=f1e89]: Activa tu seguro en pocos pasos, de forma 100% digital y sin complicaciones. Tu protección comienza desde la contratación del seguro.
+              - tablist [ref=f1e91]:
+                - tab "Coberturas y asistencias" [selected] [ref=f1e92] [cursor=pointer]
+                - tab "Glosario" [ref=f1e94] [cursor=pointer]
+              - tabpanel "Coberturas y asistencias" [ref=f1e96]:
+                - generic [ref=f1e97]:
+                  - generic [ref=f1e98]:
+                    - heading "Incendio." [level=3] [ref=f1e99]
+                    - paragraph [ref=f1e100]: Protege el contenido de tu hogar frente a daños causados por incendio, humo o acciones para controlar el fuego.
+                    - paragraph [ref=f1e101]: "También incluye daños provocados por:"
+                    - list [ref=f1e103]:
+                      - listitem [ref=f1e104]: Rotura de cañerías
+                      - listitem [ref=f1e105]: Fenómenos naturales (viento, inundaciones, deslizamientos, nieve, entre otros)
+                      - listitem [ref=f1e106]: Impacto de vehículos o aeronaves
+                      - listitem [ref=f1e107]: Huelgas o desórdenes públicos
+                  - generic [ref=f1e108]:
+                    - heading "Robo en la vivienda." [level=3] [ref=f1e109]
+                    - paragraph [ref=f1e110]: Te cubre en caso de robo dentro de tu hogar cuando haya fuerza o violencia.
+                    - paragraph [ref=f1e111]: "Incluye:"
+                    - list [ref=f1e113]:
+                      - listitem [ref=f1e114]: Daños o destrucción de tus bienes durante el robo
+                      - listitem [ref=f1e115]: Daños a la vivienda provocados en el intento o ejecución del robo
+                - generic [ref=f1e116]:
+                  - heading "Asistencias" [level=3] [ref=f1e117]
+                  - generic [ref=f1e118]:
+                    - heading "Plomería." [level=3] [ref=f1e119]
+                    - paragraph [ref=f1e120]: reparación de averías en instalaciones fijas de agua hasta por UF 1.5 por evento; 2 eventos al año.
+                    - generic [ref=f1e121]:
+                      - paragraph [ref=f1e122]: "Ejemplos:"
+                      - list [ref=f1e123]:
+                        - listitem [ref=f1e124]: Reparación llaves con filtración de agua
+                        - listitem [ref=f1e125]: Destape wc, lavaplatos o tina
+                        - listitem [ref=f1e126]: Filtración en estanques de baño, sifones o cañerías visibles
+                        - listitem [ref=f1e127]: Cambio de grifería
+                  - generic [ref=f1e128]:
+                    - heading "Cerrajería." [level=3] [ref=f1e129]
+                    - paragraph [ref=f1e130]: servicio de apertura de cerraduras inutilizadas o sin llaves, sólo en cerramientos exteriores de la vivienda hasta UF 1.5 por evento, 2 eventos al año.
+                    - generic [ref=f1e131]:
+                      - paragraph [ref=f1e132]: "Ejemplos:"
+                      - list [ref=f1e133]:
+                        - listitem [ref=f1e134]: Apertura cerradura principal por pérdida o robo de llaves
+                        - listitem [ref=f1e135]: Apertura cerradura entrada principal por inutilización de la chapa por robo o intento de robo
+                  - generic [ref=f1e136]:
+                    - heading "Vidriería." [level=3] [ref=f1e137]
+                    - paragraph [ref=f1e138]: Reemplazo de vidrios quebrados sólo en cerramientos exteriores de la vivienda, hasta UF 2 por evento, 2 eventos al año.
+                    - generic [ref=f1e139]:
+                      - paragraph [ref=f1e140]: "Ejemplo:"
+                      - list [ref=f1e141]:
+                        - listitem [ref=f1e142]: Rotura de vidrios de puertas o ventanas exteriores que formen parte del perímetro horizontal del domicilio
+                  - generic [ref=f1e143]:
+                    - heading "Electricidad." [level=3] [ref=f1e144]
+                    - paragraph [ref=f1e145]: Asistencia para restablecer fallas eléctricas básicas en el hogar, con un tope de UF 1.5 por evento y 2 eventos al año.
+                    - generic [ref=f1e146]:
+                      - paragraph [ref=f1e147]: "Ejemplo:"
+                      - list [ref=f1e148]:
+                        - listitem [ref=f1e149]: Reparación de emergencia para restablecer el suministro eléctrico
+                        - listitem [ref=f1e150]: Reposición de enchufes, soquetes e interruptores
+                        - listitem [ref=f1e151]: Cambio de interruptores automáticos, diferenciales
+  - button "Open Next.js Dev Tools" [ref=f1e56] [cursor=pointer]
+  - alert [ref=f1e60]

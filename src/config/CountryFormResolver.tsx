@@ -13,7 +13,7 @@ import {
 import { Loader } from 'tomaco-components';
 
 type CountryFormPropsByName = {
-  [FORM_NAMES.HELLO]: Record<string, never>;
+  [FORM_NAMES.HOGAR_QUOTE_START]: { country: TCountry };
 };
 
 type CountryFormComponentMap = {
@@ -21,7 +21,7 @@ type CountryFormComponentMap = {
 };
 
 interface CountryFormResolverProps<TSelectedFormName extends TFormName = TFormName> {
-  componentProps?: CountryFormPropsByName[TSelectedFormName];
+  componentProps?: Omit<CountryFormPropsByName[TSelectedFormName], 'country'>;
   country: TCountry;
   formName: TSelectedFormName;
 }
@@ -30,13 +30,13 @@ const EMPTY_COMPONENT_PROPS = {} as const;
 
 const FORM_COMPONENTS_BY_COUNTRY: Partial<Record<TCountry, Partial<CountryFormComponentMap>>> = {
   cl: {
-    [FORM_NAMES.HELLO]: lazy(() => import('@/ui/cl/Hello')),
+    [FORM_NAMES.HOGAR_QUOTE_START]: lazy(() => import('@/ui/cl/HogarQuoteStartForm')),
   },
   co: {
-    [FORM_NAMES.HELLO]: lazy(() => import('@/ui/co/Hello')),
+    [FORM_NAMES.HOGAR_QUOTE_START]: lazy(() => import('@/ui/global/HogarLocalQuote')),
   },
   pe: {
-    [FORM_NAMES.HELLO]: lazy(() => import('@/ui/pe/Hello')),
+    [FORM_NAMES.HOGAR_QUOTE_START]: lazy(() => import('@/ui/global/HogarLocalQuote')),
   },
 };
 
@@ -50,8 +50,10 @@ const CountryFormResolver = <TSelectedFormName extends TFormName>({
     [country, formName],
   ) as CountryFormComponentMap[TSelectedFormName] | null;
 
-  const resolvedProps = (componentProps ??
-    EMPTY_COMPONENT_PROPS) as CountryFormPropsByName[TSelectedFormName];
+  const resolvedProps = {
+    ...(componentProps ?? EMPTY_COMPONENT_PROPS),
+    country,
+  } as CountryFormPropsByName[TSelectedFormName];
 
   if (!LazyComponent) {
     return <p className="px-16 text-neutral60">Formulario pendiente para {country}.</p>;

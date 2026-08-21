@@ -21,7 +21,7 @@ interface CommonStore extends CommonStoreValues {
 
 const getDefaultValues = (): CommonStoreValues => ({
   country: commonConfig.country,
-  currentForm: FORM_NAMES.HELLO,
+  currentForm: FORM_NAMES.HOGAR_QUOTE_START,
   traceId: '',
 });
 

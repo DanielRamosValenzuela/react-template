@@ -1,0 +1,57 @@
+- generic [active] [ref=f2e1]:
+  - img "Falabella Seguros" [ref=f2e6]
+  - main [ref=f2e7]:
+    - heading "Cotizador de seguros de Hogar" [level=1] [ref=f2e8]:
+      - generic [ref=f2e9]: Cotizador de seguros de
+      - generic [ref=f2e10]: Hogar
+    - generic [ref=f2e13]:
+      - generic [ref=f2e14]:
+        - generic [ref=f2e15]:
+          - paragraph [ref=f2e16]: Conoce cómo funciona este seguro
+          - link "Más información" [ref=f2e17] [cursor=pointer]:
+            - /url: "#seguro-de-hogar"
+        - generic [ref=f2e18]:
+          - generic [ref=f2e19]:
+            - generic [ref=f2e20]: RUT del asegurado
+            - textbox "RUT del asegurado" [ref=f2e22]:
+              - /placeholder: "Ej: 12.345.678-9"
+              - text: 12.345.678-5
+            - generic [ref=f2e24]:
+              - generic [ref=f2e25]: Fecha de nacimiento
+              - generic [ref=f2e26]:
+                - textbox "Fecha de nacimiento" [invalid] [ref=f2e27]:
+                  - /placeholder: DD/MM/AAAA
+                  - text: 20/08/2009
+                - button "Accion de icono":
+                  - generic [ref=f2e28] [cursor=pointer]
+            - generic [ref=f2e29]: Correo electrónico
+            - textbox "Correo electrónico" [ref=f2e31]:
+              - /placeholder: "Ej: correo@email.com"
+              - text: qa@example.test
+            - generic [ref=f2e32]: Teléfono
+            - generic [ref=f2e33]:
+              - generic [ref=f2e34]: "+56"
+              - textbox "Teléfono" [ref=f2e35]:
+                - /placeholder: "987654321"
+                - text: "912345678"
+          - generic [ref=f2e36]:
+            - article [ref=f2e38]:
+              - checkbox "Acepto que me contacten para terminar el proceso de contratación del seguro según la política de privacidad." [checked] [ref=f2e61] [cursor=pointer]
+            - generic [ref=f2e40]:
+              - generic [ref=f2e41]: Acepto que me contacten para terminar el proceso de contratación del seguro según la
+              - link "política de privacidad." [ref=f2e42] [cursor=pointer]:
+                - /url: "#politica-de-privacidad"
+          - generic [ref=f2e44]:
+            - generic [ref=f2e45]: Estoy recibiendo ayuda de un asesor
+            - checkbox "Estoy recibiendo ayuda de un asesor" [ref=f2e47] [cursor=pointer]
+          - status [ref=f2e62]:
+            - article [ref=f2e63]: Para contratar este seguro debes ser mayor de 18 años de edad.
+          - button "Continuar" [ref=f2e48] [cursor=pointer]
+          - status [ref=f2e64]:
+            - article [ref=f2e65]: Completa la información solicitada para avanzar
+      - paragraph [ref=f2e49]:
+        - text: Si tienes dudas sobre los seguros de hogar, revisa las
+        - link "preguntas frecuentes" [ref=f2e50] [cursor=pointer]:
+          - /url: "#preguntas-frecuentes"
+  - button "Open Next.js Dev Tools" [ref=f2e56] [cursor=pointer]
+  - alert [ref=f2e60]

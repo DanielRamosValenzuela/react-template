@@ -24,10 +24,12 @@ export const InputController = <TFieldValues extends FieldValues>({
   <Controller
     control={control}
     name={name}
-    render={({ field }) => (
+    render={({ field, fieldState }) => (
       <Input
         {...inputProps}
         {...field}
+        errorText={fieldState.error?.message ?? inputProps.errorText}
+        isValid={fieldState.error ? false : inputProps.isValid}
         value={field.value ?? ''}
         onChange={(event) => field.onChange(transform?.(event.target.value) ?? event.target.value)}
       />

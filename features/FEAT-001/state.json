@@ -1,0 +1,102 @@
+{
+  "schemaVersion": 1,
+  "featureId": "FEAT-001",
+  "phase": "implementing",
+  "activeTaskId": "T-005",
+  "limits": {
+    "maxIterations": 10,
+    "maxAttemptsPerTask": 3,
+    "maxVerifyAttempts": 2
+  },
+  "iterations": 6,
+  "verifyAttempts": 0,
+  "tasks": [
+    {
+      "id": "T-001",
+      "title": "Implement local quote contracts, memory store, country routing, and country greetings",
+      "paths": [
+        "src/contracts/forms",
+        "src/store",
+        "src/mocks",
+        "src/config",
+        "src/app/(root)",
+        "src/ui/global"
+      ],
+      "status": "done",
+      "attempts": 0,
+      "summary": "Replaced HELLO routing with HOGAR_QUOTE_START, added typed local quote contracts and country-only async greetings, introduced a plain in-memory Zustand quote store, kept shared root chrome, and added shared CO/PE local quote UI. TypeScript and diagnostics pass; inactive Hello files remain for final cleanup.",
+      "blockReason": null,
+      "createdAt": "2026-08-21T00:08:30.315Z",
+      "startedAt": "2026-08-21T00:08:43.971Z",
+      "updatedAt": "2026-08-21T00:14:56.408Z",
+      "completedAt": "2026-08-21T00:14:56.408Z"
+    },
+    {
+      "id": "T-002",
+      "title": "Implement reusable RHF Tomaco controls and Chile form schema and hook",
+      "paths": [
+        "src/widgets/form-controls",
+        "src/ui/cl/HogarQuoteStartForm",
+        "src/utils/functions"
+      ],
+      "status": "done",
+      "attempts": 0,
+      "summary": "Added RHF-aware Tomaco Input, CheckBox, InputDate, and Switch controllers; implemented Chile RUT/date/email/mobile/consent/advisor validation and normalization; added onTouched form hook with first-error focus, in-memory payload storage, country-only local quote submission, and approved validation/underage messages. TypeScript and diagnostics pass.",
+      "blockReason": null,
+      "createdAt": "2026-08-21T00:08:32.458Z",
+      "startedAt": "2026-08-21T00:14:58.925Z",
+      "updatedAt": "2026-08-21T00:26:44.543Z",
+      "completedAt": "2026-08-21T00:26:44.543Z"
+    },
+    {
+      "id": "T-003",
+      "title": "Implement Chile Figma UI, information dialog, responsive styling, and approved assets",
+      "paths": [
+        "src/ui/cl/HogarQuoteStartForm",
+        "src/app/(root)/page.tsx",
+        "src/app/globals.css",
+        "public/global/hogar"
+      ],
+      "status": "done",
+      "attempts": 0,
+      "summary": "Made the shared Tomaco Header omit logoLink when progress is hidden while preserving the default root link for existing callers; validated focused formatting/lint, TypeScript, production build, SVG assets, and cleanup.",
+      "blockReason": null,
+      "createdAt": "2026-08-21T00:08:34.989Z",
+      "startedAt": "2026-08-21T00:26:47.574Z",
+      "updatedAt": "2026-08-21T00:56:43.691Z",
+      "completedAt": "2026-08-21T00:56:43.691Z"
+    },
+    {
+      "id": "T-004",
+      "title": "Add focused contract, store, validation, country, and UI tests",
+      "paths": [
+        "test",
+        "playwright.config.ts"
+      ],
+      "status": "done",
+      "attempts": 0,
+      "summary": "Added mirrored contract, utility, in-memory store, schema, resolver, and browser UI coverage; fixed consent copy interaction while preserving independent privacy-link navigation; replaced the obsolete Hello test with a resolver smoke. Playwright passes 21/21, production build passes, and lint reports 0 errors with 104 pre-existing Homero-script warnings.",
+      "blockReason": null,
+      "createdAt": "2026-08-21T00:08:37.978Z",
+      "startedAt": "2026-08-21T00:56:47.914Z",
+      "updatedAt": "2026-08-21T01:34:23.115Z",
+      "completedAt": "2026-08-21T01:34:23.115Z"
+    },
+    {
+      "id": "T-005",
+      "title": "Capture Playwright CLI desktop and mobile evidence and complete implementation review",
+      "paths": [
+        "features/FEAT-001/evidence"
+      ],
+      "status": "in-progress",
+      "attempts": 0,
+      "summary": null,
+      "blockReason": null,
+      "createdAt": "2026-08-21T00:08:41.161Z",
+      "startedAt": "2026-08-21T01:34:26.355Z",
+      "updatedAt": "2026-08-21T01:34:26.355Z",
+      "completedAt": null
+    }
+  ],
+  "updatedAt": "2026-08-21T01:34:26.356Z"
+}

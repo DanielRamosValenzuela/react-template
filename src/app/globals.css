@@ -66,6 +66,152 @@ a {
   padding: 40px;
 }
 
+.hogar-quote-page {
+  --hogar-information-background: #f3f5fc;
+  --hogar-information-border: #d4dcf4;
+  --hogar-warning-background: #fff4df;
+
+  padding-top: 40px;
+  padding-bottom: 68px !important;
+}
+
+.hogar-quote-title {
+  margin-bottom: 40px;
+}
+
+.hogar-quote-title__product {
+  min-height: 45px;
+}
+
+.hogar-quote-title__icon {
+  position: relative;
+  flex: 0 0 40px;
+  width: 40px;
+  height: 40px;
+}
+
+.hogar-quote-title__icon-background {
+  display: block;
+  width: 40px;
+  height: 40px;
+}
+
+.hogar-quote-title__icon-glyph {
+  position: absolute;
+  top: 16.39%;
+  left: 21.31%;
+  width: 57.6%;
+  height: 62.41%;
+}
+
+.hogar-quote-card {
+  max-width: 560px;
+}
+
+.hogar-quote-card__info {
+  min-height: 59px;
+  padding: 16px 24px;
+  background-color: var(--hogar-information-background);
+  border: 1px solid var(--hogar-information-border);
+  border-bottom: 0;
+}
+
+.hogar-quote-card__info-action {
+  flex-shrink: 0;
+}
+
+.hogar-quote-card__body {
+  padding: 40px;
+}
+
+.hogar-consent__checkbox,
+.hogar-consent__checkbox article {
+  flex: 0 0 24px;
+  width: 24px !important;
+}
+
+.hogar-consent__checkbox article > label {
+  display: none;
+}
+
+.hogar-advisor-panel {
+  min-height: 58px;
+  padding: 16px 24px;
+  background-color: var(--neutral5);
+}
+
+.hogar-advisor-tooltip {
+  display: inline-block;
+  touch-action: manipulation;
+}
+
+.hogar-advisor-tooltip.is-open .tooltip-wrapper__bubble__top {
+  visibility: visible;
+  opacity: 1;
+}
+
+.hogar-quote-card__cta {
+  min-height: 56px;
+}
+
+.hogar-quote-page .alert--warning {
+  background-color: var(--hogar-warning-background);
+}
+
+.hogar-quote-faq {
+  max-width: 464px;
+  margin-top: 40px;
+}
+
+.hogar-quote-page .btn.link:focus-visible,
+.hogar-advisor-tooltip:focus-visible,
+.hogar-information-dialog [role='tab']:focus-visible,
+.hogar-information-dialog .dialog__close-btn:focus-visible,
+.hogar-information-dialog__content:focus-visible {
+  outline: 2px solid var(--color-accent) !important;
+  outline-offset: 2px;
+}
+
+.hogar-information-dialog {
+  width: 640px;
+  min-width: 640px;
+  max-width: 640px;
+  height: min(640px, calc(100dvh - 48px)) !important;
+  max-height: calc(100dvh - 48px) !important;
+  padding: 0;
+  overflow: hidden;
+  border-radius: 12px !important;
+}
+
+.hogar-information-dialog .dialog__container {
+  display: flex;
+  flex-direction: column;
+  height: calc(100% - 56px);
+  min-height: 0;
+  margin-top: 56px;
+  margin-bottom: 0;
+}
+
+.hogar-information-dialog .dialog__container--with-header .dialog__body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  min-height: 0;
+  padding: 0 24px 32px;
+  overflow: hidden;
+}
+
+.hogar-information-dialog__content {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+
+.hogar-information-dialog__list {
+  padding-left: 24px;
+}
+
 .border-bottom-green {
   border-bottom: 1px solid var(--color-accent);
 }
@@ -102,6 +248,33 @@ a {
 
   .starter-card-layout {
     padding: 40px 24px;
+  }
+
+  .hogar-quote-page {
+    padding-top: 32px;
+  }
+
+  .hogar-quote-card__info {
+    align-items: flex-start !important;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .hogar-quote-card__body {
+    padding: 40px 24px;
+  }
+
+  .dialog__overlay:has(> .hogar-information-dialog) {
+    align-items: center;
+    padding: 24px;
+  }
+
+  .hogar-information-dialog {
+    width: calc(100vw - 48px) !important;
+    min-width: 0;
+    max-width: calc(100vw - 48px);
+    height: calc(100dvh - 48px) !important;
+    border-radius: 12px !important;
   }
 }
 

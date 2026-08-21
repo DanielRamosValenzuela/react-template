@@ -1,0 +1,49 @@
+- generic [active] [ref=f2e1]:
+  - img "Falabella Seguros" [ref=f2e6]
+  - main [ref=f2e7]:
+    - heading "Cotizador de seguros de Hogar" [level=1] [ref=f2e8]:
+      - generic [ref=f2e9]: Cotizador de seguros de
+      - generic [ref=f2e10]: Hogar
+    - generic [ref=f2e13]:
+      - generic [ref=f2e14]:
+        - generic [ref=f2e15]:
+          - paragraph [ref=f2e16]: Conoce cómo funciona este seguro
+          - link "Más información" [ref=f2e17] [cursor=pointer]:
+            - /url: "#seguro-de-hogar"
+        - generic [ref=f2e18]:
+          - generic [ref=f2e19]:
+            - generic [ref=f2e20]: RUT del asegurado
+            - textbox "RUT del asegurado" [ref=f2e22]:
+              - /placeholder: "Ej: 12.345.678-9"
+            - generic [ref=f2e24]:
+              - generic [ref=f2e25]: Fecha de nacimiento
+              - generic [ref=f2e26]:
+                - textbox "Fecha de nacimiento" [ref=f2e27]:
+                  - /placeholder: DD/MM/AAAA
+                - button "Accion de icono":
+                  - generic [ref=f2e28] [cursor=pointer]
+            - generic [ref=f2e29]: Correo electrónico
+            - textbox "Correo electrónico" [ref=f2e31]:
+              - /placeholder: "Ej: correo@email.com"
+            - generic [ref=f2e32]: Teléfono
+            - generic [ref=f2e33]:
+              - generic [ref=f2e34]: "+56"
+              - textbox "Teléfono" [ref=f2e35]:
+                - /placeholder: "987654321"
+          - generic [ref=f2e36]:
+            - article [ref=f2e38]:
+              - checkbox "Acepto que me contacten para terminar el proceso de contratación del seguro según la" [ref=f2e39] [cursor=pointer]
+            - generic [ref=f2e40]:
+              - generic [ref=f2e41]: Acepto que me contacten para terminar el proceso de contratación del seguro según la
+              - link "política de privacidad." [ref=f2e42] [cursor=pointer]:
+                - /url: "#politica-de-privacidad"
+          - generic [ref=f2e44]:
+            - generic [ref=f2e45]: Estoy recibiendo ayuda de un asesor
+            - checkbox "Estoy recibiendo ayuda de un asesor" [ref=f2e47] [cursor=pointer]
+          - button "Continuar" [ref=f2e48] [cursor=pointer]
+      - paragraph [ref=f2e49]:
+        - text: Si tienes dudas sobre los seguros de hogar, revisa las
+        - link "preguntas frecuentes" [ref=f2e50] [cursor=pointer]:
+          - /url: "#preguntas-frecuentes"
+  - button "Open Next.js Dev Tools" [ref=f2e56] [cursor=pointer]
+  - alert [ref=f2e60]

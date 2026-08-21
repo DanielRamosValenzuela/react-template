@@ -14,7 +14,7 @@ export default defineConfig({
   ],
   reporter: 'html',
   retries: process.env.CI ? 2 : 0,
-  testDir: './test/ui',
+  testDir: './test',
   use: {
     baseURL: 'http://localhost:3002',
     trace: 'on-first-retry',

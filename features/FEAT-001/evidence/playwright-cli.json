@@ -1,0 +1,61 @@
+{
+  "schemaVersion": 1,
+  "featureId": "FEAT-001",
+  "session": "homero-FEAT-001",
+  "scenarios": [
+    {
+      "name": "cl-pristine-desktop",
+      "status": "passed",
+      "screenshot": "evidence/screenshots/cl-pristine-desktop.png",
+      "snapshot": "evidence/snapshots/cl-pristine-desktop.yaml"
+    },
+    {
+      "name": "cl-validation-errors-desktop",
+      "status": "passed",
+      "screenshot": "evidence/screenshots/cl-validation-errors-desktop.png",
+      "snapshot": "evidence/snapshots/cl-validation-errors-desktop.yaml"
+    },
+    {
+      "name": "cl-advisor-tooltip-desktop",
+      "status": "passed",
+      "screenshot": "evidence/screenshots/cl-advisor-tooltip-desktop.png",
+      "snapshot": "evidence/snapshots/cl-advisor-tooltip-desktop.yaml"
+    },
+    {
+      "name": "cl-dialog-coverages-desktop",
+      "status": "passed",
+      "screenshot": "evidence/screenshots/cl-dialog-coverages-desktop.png",
+      "snapshot": "evidence/snapshots/cl-dialog-coverages-desktop.yaml"
+    },
+    {
+      "name": "cl-dialog-glossary-desktop",
+      "status": "passed",
+      "screenshot": "evidence/screenshots/cl-dialog-glossary-desktop.png",
+      "snapshot": "evidence/snapshots/cl-dialog-glossary-desktop.yaml"
+    },
+    {
+      "name": "cl-underage-desktop",
+      "status": "passed",
+      "screenshot": "evidence/screenshots/cl-underage-desktop.png",
+      "snapshot": "evidence/snapshots/cl-underage-desktop.yaml"
+    },
+    {
+      "name": "cl-success-desktop",
+      "status": "passed",
+      "screenshot": "evidence/screenshots/cl-success-desktop.png",
+      "snapshot": "evidence/snapshots/cl-success-desktop.yaml"
+    },
+    {
+      "name": "cl-pristine-mobile",
+      "status": "passed",
+      "screenshot": "evidence/screenshots/cl-pristine-mobile.png",
+      "snapshot": "evidence/snapshots/cl-pristine-mobile.yaml"
+    },
+    {
+      "name": "cl-dialog-mobile",
+      "status": "passed",
+      "screenshot": "evidence/screenshots/cl-dialog-mobile.png",
+      "snapshot": "evidence/snapshots/cl-dialog-mobile.yaml"
+    }
+  ]
+}

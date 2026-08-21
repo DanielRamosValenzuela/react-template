@@ -11,23 +11,32 @@ interface CheckBoxControllerProps<TFieldValues extends FieldValues> extends Omit
   'checked' | 'name' | 'onChange'
 > {
   control: Control<TFieldValues>;
+  inputAriaLabelledBy?: string;
   name: Path<TFieldValues>;
 }
 
 export const CheckBoxController = <TFieldValues extends FieldValues>({
   control,
+  inputAriaLabelledBy,
   name,
   ...checkBoxProps
 }: CheckBoxControllerProps<TFieldValues>) => (
   <Controller
     control={control}
     name={name}
-    render={({ field }) => (
+    render={({ field, fieldState }) => (
       <CheckBox
         {...checkBoxProps}
         checked={Boolean(field.value)}
+        errorText={fieldState.error?.message ?? checkBoxProps.errorText}
+        isValid={fieldState.error ? false : checkBoxProps.isValid}
         name={field.name}
-        onChange={(event) => field.onChange(event.target.checked)}
+        onChange={field.onChange}
+        ref={(input) => {
+          field.ref(input);
+
+          if (inputAriaLabelledBy) input?.setAttribute('aria-labelledby', inputAriaLabelledBy);
+        }}
       />
     )}
   />

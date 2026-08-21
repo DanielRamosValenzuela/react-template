@@ -1,0 +1,81 @@
+{
+  "schemaVersion": 1,
+  "id": "FEAT-001",
+  "name": "Home Insurance Root Quote Form",
+  "status": "implementing",
+  "branch": "test/homero-4",
+  "product": {
+    "portfolio": "Falabella Seguros",
+    "designSystem": "Tomaco",
+    "countries": [
+      "cl",
+      "co",
+      "pe"
+    ]
+  },
+  "design": {
+    "visualChange": true,
+    "figma": {
+      "url": "https://www.figma.com/design/ygl9QrEtz0s3nvLUyCzr1W/-HOGAR--Web-2.0?node-id=3165-14184&m=dev",
+      "nodeId": "3165-14184",
+      "version": "live-observed-2026-08-20"
+    },
+    "viewports": [
+      "desktop",
+      "mobile"
+    ],
+    "visualDiffThreshold": 0.01
+  },
+  "contracts": {
+    "mode": "no-backend-exception",
+    "source": "not-applicable",
+    "exception": "No backend is available for this prototype; submit stores validated data in Zustand and invokes a country-aware local quote mock that returns a simple greeting.",
+    "productionMockFallbackAllowed": false,
+    "mocks": {
+      "location": "src/mocks",
+      "registered": false,
+      "source": null
+    }
+  },
+  "requirements": {
+    "acceptanceCriteria": [
+      "At desktop 1280px, the Chile root renders shared chrome once, the Home quote title, the centered 560px form card without the promotion, and the FAQ link.",
+      "At mobile 375px, the page uses 24px gutters, one column, no horizontal overflow, a responsive card/dialog, and a non-sticky CTA.",
+      "Submitting incomplete or malformed Chile fields focuses the first invalid control and shows the exact Figma field and general validation copy while keeping the CTA available.",
+      "Valid Chile values are normalized for RUT, local YYYY-MM-DD birth date, lowercase email, +569XXXXXXXX phone, required consent, and optional advisor code.",
+      "Customers younger than 18 receive the approved underage warning; there is no maximum-age rejection.",
+      "Advisor assistance reveals a locally validated 1-8 character alphanumeric code and tooltip, and disabling assistance clears the code.",
+      "A valid local submit stores the normalized Chile payload only in memory, shows Button loading/disabled while pending, and displays Hola Chile without HTTP traffic.",
+      "The shared local quote behavior displays Hola Colombia for co and Hola Perú for pe without collecting or passing Chilean PII.",
+      "Más información opens the approved two-tab Dialog and supports close control, backdrop, Escape, focus trapping/restoration, keyboard tabs, and internal scrolling.",
+      "No PII is written to Web Storage, logs, analytics, URLs, quote mock inputs, screenshots, or snapshots.",
+      "Automated checks and Playwright CLI evidence cover Chile validation/advisor/dialog/loading/success, Colombia/Peru success, desktop, and mobile states."
+    ],
+    "uiStates": [
+      "cl-pristine-required-fields-empty-cta-enabled",
+      "cl-touched-inline-validation-errors-with-general-warning",
+      "cl-underage-warning",
+      "cl-advisor-enabled-code-visible",
+      "cl-advisor-code-validation-error",
+      "cl-more-information-dialog-coverage-tab",
+      "cl-more-information-dialog-glossary-tab",
+      "local-quote-submitting-button-loading-disabled",
+      "local-quote-success-hola-chile",
+      "local-quote-success-hola-colombia",
+      "local-quote-success-hola-peru",
+      "responsive-mobile-375-approved-adaptation"
+    ],
+    "openQuestions": []
+  },
+  "verification": {
+    "required": [
+      "lint",
+      "typecheck",
+      "test",
+      "e2e",
+      "playwright-cli"
+    ],
+    "playwrightCliEvidence": "evidence/playwright-cli.json"
+  },
+  "receipt": null
+}

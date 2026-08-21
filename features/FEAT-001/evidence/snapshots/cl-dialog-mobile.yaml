@@ -1,0 +1,121 @@
+- generic [ref=f4e1]:
+  - img "Falabella Seguros" [ref=f4e6]
+  - main [ref=f4e7]:
+    - heading "Cotizador de seguros de Hogar" [level=1] [ref=f4e8]:
+      - generic [ref=f4e9]: Cotizador de seguros de
+      - generic [ref=f4e10]: Hogar
+    - generic [ref=f4e13]:
+      - generic [ref=f4e14]:
+        - generic [ref=f4e15]:
+          - paragraph [ref=f4e16]: Conoce cómo funciona este seguro
+          - link "Más información" [ref=f4e17] [cursor=pointer]:
+            - /url: "#seguro-de-hogar"
+        - generic [ref=f4e18]:
+          - generic [ref=f4e19]:
+            - generic [ref=f4e20]: RUT del asegurado
+            - textbox "RUT del asegurado" [ref=f4e22]:
+              - /placeholder: "Ej: 12.345.678-9"
+            - generic [ref=f4e24]:
+              - generic [ref=f4e25]: Fecha de nacimiento
+              - generic [ref=f4e26]:
+                - textbox "Fecha de nacimiento" [ref=f4e27]:
+                  - /placeholder: DD/MM/AAAA
+                - button "Accion de icono":
+                  - generic [ref=f4e28] [cursor=pointer]
+            - generic [ref=f4e29]: Correo electrónico
+            - textbox "Correo electrónico" [ref=f4e31]:
+              - /placeholder: "Ej: correo@email.com"
+            - generic [ref=f4e32]: Teléfono
+            - generic [ref=f4e33]:
+              - generic [ref=f4e34]: "+56"
+              - textbox "Teléfono" [ref=f4e35]:
+                - /placeholder: "987654321"
+          - generic [ref=f4e36]:
+            - article [ref=f4e38]:
+              - checkbox "Acepto que me contacten para terminar el proceso de contratación del seguro según la política de privacidad." [ref=f4e61] [cursor=pointer]
+            - generic [ref=f4e40]:
+              - generic [ref=f4e41]: Acepto que me contacten para terminar el proceso de contratación del seguro según la
+              - link "política de privacidad." [ref=f4e42] [cursor=pointer]:
+                - /url: "#politica-de-privacidad"
+          - generic [ref=f4e44]:
+            - generic [ref=f4e45]: Estoy recibiendo ayuda de un asesor
+            - checkbox "Estoy recibiendo ayuda de un asesor" [ref=f4e47] [cursor=pointer]
+          - button "Continuar" [ref=f4e48] [cursor=pointer]
+      - paragraph [ref=f4e49]:
+        - text: Si tienes dudas sobre los seguros de hogar, revisa las
+        - link "preguntas frecuentes" [ref=f4e50] [cursor=pointer]:
+          - /url: "#preguntas-frecuentes"
+      - dialog "Seguro de Hogar" [ref=f4e63]:
+        - button "Cerrar dialogo" [active] [ref=f4e65] [cursor=pointer]
+        - generic [ref=f4e66]:
+          - generic [ref=f4e67]: Seguro de Hogar
+          - generic [ref=f4e68]:
+            - generic [ref=f4e69]: Seguro de Hogar
+            - generic [ref=f4e70]:
+              - paragraph [ref=f4e71]: Protege lo que más te importa dentro de tu hogar frente a imprevistos como robos, incendios y otros daños.
+              - generic [ref=f4e72]:
+                - generic [ref=f4e73]:
+                  - heading "Protege lo que hay en tu hogar" [level=3] [ref=f4e74]
+                  - paragraph [ref=f4e75]: Tu seguro protege muebles, electrodomésticos y objetos de uso personal, ayudándote a enfrentar imprevistos sin afectar tu tranquilidad. Además, cuenta con diferentes asistencias 24/7 ante emergencia en tu hogar.
+                - generic [ref=f4e76]:
+                  - heading "Activa tu seguro de forma rápida y simple" [level=3] [ref=f4e77]
+                  - paragraph [ref=f4e78]: Activa tu seguro en pocos pasos, de forma 100% digital y sin complicaciones. Tu protección comienza desde la contratación del seguro.
+              - tablist [ref=f4e80]:
+                - tab "Coberturas y asistencias" [selected] [ref=f4e81] [cursor=pointer]
+                - tab "Glosario" [ref=f4e83] [cursor=pointer]
+              - tabpanel "Coberturas y asistencias" [ref=f4e85]:
+                - generic [ref=f4e86]:
+                  - generic [ref=f4e87]:
+                    - heading "Incendio." [level=3] [ref=f4e88]
+                    - paragraph [ref=f4e89]: Protege el contenido de tu hogar frente a daños causados por incendio, humo o acciones para controlar el fuego.
+                    - paragraph [ref=f4e90]: "También incluye daños provocados por:"
+                    - list [ref=f4e92]:
+                      - listitem [ref=f4e93]: Rotura de cañerías
+                      - listitem [ref=f4e94]: Fenómenos naturales (viento, inundaciones, deslizamientos, nieve, entre otros)
+                      - listitem [ref=f4e95]: Impacto de vehículos o aeronaves
+                      - listitem [ref=f4e96]: Huelgas o desórdenes públicos
+                  - generic [ref=f4e97]:
+                    - heading "Robo en la vivienda." [level=3] [ref=f4e98]
+                    - paragraph [ref=f4e99]: Te cubre en caso de robo dentro de tu hogar cuando haya fuerza o violencia.
+                    - paragraph [ref=f4e100]: "Incluye:"
+                    - list [ref=f4e102]:
+                      - listitem [ref=f4e103]: Daños o destrucción de tus bienes durante el robo
+                      - listitem [ref=f4e104]: Daños a la vivienda provocados en el intento o ejecución del robo
+                - generic [ref=f4e105]:
+                  - heading "Asistencias" [level=3] [ref=f4e106]
+                  - generic [ref=f4e107]:
+                    - heading "Plomería." [level=3] [ref=f4e108]
+                    - paragraph [ref=f4e109]: reparación de averías en instalaciones fijas de agua hasta por UF 1.5 por evento; 2 eventos al año.
+                    - generic [ref=f4e110]:
+                      - paragraph [ref=f4e111]: "Ejemplos:"
+                      - list [ref=f4e112]:
+                        - listitem [ref=f4e113]: Reparación llaves con filtración de agua
+                        - listitem [ref=f4e114]: Destape wc, lavaplatos o tina
+                        - listitem [ref=f4e115]: Filtración en estanques de baño, sifones o cañerías visibles
+                        - listitem [ref=f4e116]: Cambio de grifería
+                  - generic [ref=f4e117]:
+                    - heading "Cerrajería." [level=3] [ref=f4e118]
+                    - paragraph [ref=f4e119]: servicio de apertura de cerraduras inutilizadas o sin llaves, sólo en cerramientos exteriores de la vivienda hasta UF 1.5 por evento, 2 eventos al año.
+                    - generic [ref=f4e120]:
+                      - paragraph [ref=f4e121]: "Ejemplos:"
+                      - list [ref=f4e122]:
+                        - listitem [ref=f4e123]: Apertura cerradura principal por pérdida o robo de llaves
+                        - listitem [ref=f4e124]: Apertura cerradura entrada principal por inutilización de la chapa por robo o intento de robo
+                  - generic [ref=f4e125]:
+                    - heading "Vidriería." [level=3] [ref=f4e126]
+                    - paragraph [ref=f4e127]: Reemplazo de vidrios quebrados sólo en cerramientos exteriores de la vivienda, hasta UF 2 por evento, 2 eventos al año.
+                    - generic [ref=f4e128]:
+                      - paragraph [ref=f4e129]: "Ejemplo:"
+                      - list [ref=f4e130]:
+                        - listitem [ref=f4e131]: Rotura de vidrios de puertas o ventanas exteriores que formen parte del perímetro horizontal del domicilio
+                  - generic [ref=f4e132]:
+                    - heading "Electricidad." [level=3] [ref=f4e133]
+                    - paragraph [ref=f4e134]: Asistencia para restablecer fallas eléctricas básicas en el hogar, con un tope de UF 1.5 por evento y 2 eventos al año.
+                    - generic [ref=f4e135]:
+                      - paragraph [ref=f4e136]: "Ejemplo:"
+                      - list [ref=f4e137]:
+                        - listitem [ref=f4e138]: Reparación de emergencia para restablecer el suministro eléctrico
+                        - listitem [ref=f4e139]: Reposición de enchufes, soquetes e interruptores
+                        - listitem [ref=f4e140]: Cambio de interruptores automáticos, diferenciales
+  - button "Open Next.js Dev Tools" [ref=f4e56] [cursor=pointer]
+  - alert [ref=f4e60]
